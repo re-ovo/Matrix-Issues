@@ -1,10 +1,24 @@
----
-name: Custom issue template
-about: Describe this issue template's purpose here.
-title: ''
-labels: ''
-assignees: ''
-
----
+### Issue description
 
 
+
+### Video Link
+if you have...
+
+### Core information
+**Server version**: 
+
+**Matrix version**: 
+
+**ProtocolLib version**: 
+
+**Plugin list**: 
+
+### Special environment information
+**ViaVersion version**: ??
+
+**ProtocolSupport version**: ??
+
+**ViaBackwards version**: ??
+
+**BungeeCord plugins**: ??
