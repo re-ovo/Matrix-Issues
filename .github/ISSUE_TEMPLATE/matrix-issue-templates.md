@@ -7,4 +7,17 @@ assignees: ''
 
 ---
 
-Issue description:
+### Issue description
+<!-- Describe your issue here,  if you have videos for it, you can write the link here too -->
+
+
+### Core information
+** Matrix Version **:
+** Server Version **:
+** ProtocolLib Version **:
+** Plugin List: **:
+
+### Other infomation
+** ViaVersion Version: **
+** ProtocolSupport Version: **
+**BungeeCord plugins**:
