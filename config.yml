@@ -1,0 +1,28 @@
+########################################################################################################
+#
+#
+#                                      Matrix Anti-Cheat
+#                                          config.yml
+#
+########################################################################################################
+
+# Player Latency Protection
+# This feature can decrease the violations increasing of high latency player
+player_latency_protection:
+  # Enable this feature?
+  enable: true
+
+
+# Server Lag Protection
+# This feature can auto disable some checks when your server is lagging
+tps_protection:
+  # Enable this feature?
+  enable: true
+
+  # Min TPS
+  min_tps: 17.0
+
+
+# Log violations to file
+# If you are BungeeCord Network,i suggest don't use feature,because it will create many useless log files and you need to delete them one by one
+log_file: true
