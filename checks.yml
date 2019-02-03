@@ -6,7 +6,7 @@
 #
 ########################################################################################################
 
-# KillAura check prevent player using most of combat hacks,such as KillAura/Reach/HitBox...
+# KillAura check prevents player using most of combat hacks, such as KillAura/Reach/HitBox...
 killaura:
   # Enable this check?
   enable: true
@@ -27,7 +27,7 @@ killaura:
     move_compensation: true
 
     # Lag compensation
-    # Anti reach false positives when player is lag
+    # Anti reach false positives when the player is lag
     lag_compensation: true
 
   # Punish commands
@@ -69,7 +69,7 @@ fly:
     100: 'matrix notify %player% try to fly (Fly) #2'
     180: 'matrix kick %player% Fly or relate'
 
-# BadPackets Check prevents player sending too mush movement packets or sending illegal packets
+# BadPackets Check prevents player sending too much movement packets or sending illegal packets
 # Warn: Don't disable this check,because this check contains many hidden checks,it is important for Matrix!
 badpackets:
   # Enable this check?
