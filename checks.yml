@@ -1,0 +1,190 @@
+########################################################################################################
+#
+#
+#                                      Matrix Anti-Cheat
+#                                          checks.yml
+#
+########################################################################################################
+
+# KillAura check prevent player using most of combat hacks,such as KillAura/Reach/HitBox...
+killaura:
+  # Enable this check?
+  enable: true
+
+  # Max clicks per seconds
+  max_cps: 15
+
+  # The violations start to cancel hits
+  cancel_vl: 20
+
+  # HitBox check setting
+  hitbox:
+    # Max Attack Reach Distance
+    max_reach: 3.3
+
+    # Movement compensation
+    # Anti reach false positives in movement
+    move_compensation: true
+
+    # Lag compensation
+    # Anti reach false positives when player is lag
+    lag_compensation: true
+
+  # Punish commands
+  commands:
+    20: 'matrix notify %player% might be using combat hacks (KillAura)'
+    35: 'matrix notify %player% is using combat hacks (KillAura) #2'
+    40: 'matrix kick %player% KillAura'
+
+# Speed Check prevent player boosting up movement speed
+# Warn: If you disable speed check,fly check will not working too!
+speed:
+  # Enable this check?
+  enable: true
+
+  # setback violations(-1 is never setback)
+  cancel_vl: 30
+
+  # Commands
+  commands:
+    35: 'matrix notify %player% try to move faster than usual (Speed) #1'
+    70: 'matrix notify %player% try to move faster than usual (Speed) #2'
+    130: 'matrix kick %player% Speed'
+
+# Fly Check prevents player flying up
+fly:
+  # Enable this check?
+  enable: true
+
+  # setback violations(-1 is never setback)
+  cancel_vl: 50
+
+  # Ability Check
+  # This check can quickly detect vanilla fly hack,but maybe not compatible with some plugins
+  ability: true
+
+  # Commands
+  commands:
+    50: 'matrix notify %player% try to fly (Fly) #1'
+    100: 'matrix notify %player% try to fly (Fly) #2'
+    180: 'matrix kick %player% Fly or relate'
+
+# BadPackets Check prevents player sending too mush movement packets or sending illegal packets
+# Warn: Don't disable this check,because this check contains many hidden checks,it is important for Matrix!
+badpackets:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel illegal move packets
+  cancel_vl: 30
+
+  # Violation Command Map
+  commands:
+    100: 'matrix notify %player% is sending unusual packets to server (BadPackets) #1'
+    150: 'matrix notify %player% is sending unusual packets to server (BadPackets) #2'
+    240: 'matrix kick %player% Sending unusual packets'
+
+# FastUse Check prevents player eating/using item quickly
+fastuse:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel using item (-1 = never cancel)
+  cancel_vl: 5
+
+  # Violations Command Map
+  commands:
+    5: 'matrix notify %player% try to using item faster than usual (FastUse)'
+    12: 'matrix kick %player% FastUse'
+
+# FastBow Check prevents player shooting bow fast
+fastbow:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel shooting bow
+  cancel_vl: 7
+
+  # Violations Command Map
+  commands:
+    5: 'matrix notify %player% try to shooting bow fast (FastBow)'
+    15: 'matrix kick %player% Shooting bow too fast'
+
+# FastHeal Check prevents player regen health fast
+fastheal:
+  # Enable this check?
+  enable: true
+
+  # Violations Command Map
+  commands:
+    10: 'matrix notify %player% try to regen health fast (FastHeal)'
+    20: 'matrix kick %player% Regen Fast'
+
+# Block Interact Check prevents player breaking/placing blocks fast
+block:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel place/break block
+  cancel_vl: 15
+
+  # Violations Command Map
+  commands:
+    10: 'matrix notify %player% try to place/block illegally (Block)'
+    20: 'matrix kick %player% Illegal Block Action'
+
+# Jesus check prevents player moving fast in Liquid or Walk on Liquid
+jesus:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel liquid movement
+  cancel_vl: 15
+
+  # Violations Command Map
+  commands:
+    15: 'matrix notify %player% try to move illegally in liquid (Jesus)'
+    25: 'matrix kick %player% Jesus/WaterSpeed/WaterFly'
+
+# Inventory Check prevents player using inventory illegally (InventoryMove / CheatSteal)
+inventory:
+  # Enable this check?
+  enable: true
+
+  # The violations start to cancel
+  cancel_vl: 10
+
+  # Violations Command Map
+  commands:
+    10: 'matrix notify %player% try to use inventory illegally (Inventory)'
+    20: 'matrix kick %player% Inventory Hack'
+
+# Velocity check prevents player using anti-knockback
+velocity:
+  # Enable this check?
+  enable: true
+
+  # Commands Map
+  commands:
+    10: 'matrix notify %player% try to ignore server velocity (Velocity)'
+    15: 'matrix kick %player% Velocity'
+
+# Chat check prevents player spamming message
+chat:
+  # Enable this check?
+  enable: true
+
+  # Violations Command Map
+  commands:
+    4: 'matrix notify %player% is spamming'
+    10: 'matrix kick %player% Don''t Spam'
+
+# Interact check prevents player interact entity/block illegally
+interact:
+  # Enable this check?
+  enable: true
+
+  # Violations Command Map
+  commands:
+    10: 'matrix notify %player% try to interact entity/block illegally (Interact)'
+    15: 'matrix kick %player% Interact Block/Entity Wrongly'
