@@ -7,14 +7,14 @@
 ########################################################################################################
 
 # Player Latency Protection
-# This feature can decrease the violations increasing of high latency player
+# Decreases the amount of violations increasing for players with high latency
 player_latency_protection:
   # Enable this feature?
   enable: true
 
 
 # Server Lag Protection
-# This feature can auto-disable some checks when your server is lagging
+# Automatically disables some checks when your server is lagging
 tps_protection:
   # Enable this feature?
   enable: true
@@ -24,5 +24,9 @@ tps_protection:
 
 
 # Log violations to file
-# If you are using BungeeCord, I suggest not enabling this feature, as it will create many useless log files which you will need to delete one by one.
+# If you are using BungeeCord, I recommend not enabling this feature as it will create many useless log files
 log_file: true
+
+# Disable bypass permission
+# if you don't want to operator bypass Matrix or you need to test Matrix in OP mode,you can enable this
+disable_bypass_permission: false
