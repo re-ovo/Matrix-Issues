@@ -1,0 +1,13 @@
+########################################################################################################
+#
+#
+#                                      Matrix Anti-Cheat
+#                                          language.yml
+#
+########################################################################################################
+
+# Message Prefix
+prefix: '&7[&fMatrix&7]&r '
+
+# Kick message format
+kick-format: 'player %player% was kicked because of cheating!'
