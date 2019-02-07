@@ -20,7 +20,7 @@ killaura:
   # HitBox check setting
   hitbox:
     # Max Attack Reach Distance
-    max_reach: 3.3
+    max_reach: 3.45
 
     # Movement compensation
     # Anti reach false positives in movement
@@ -34,7 +34,7 @@ killaura:
   commands:
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
-    40: 'matrix kick %player% KillAura'
+    45: 'matrix kick %player% KillAura'
 
 # Speed Check prevent player boosting up movement speed
 # Warn: If you disable speed check,fly check will not working too!
@@ -47,9 +47,9 @@ speed:
 
   # Commands
   commands:
-    35: 'matrix notify %player% try to move faster than usual (Speed) #1'
-    70: 'matrix notify %player% try to move faster than usual (Speed) #2'
-    130: 'matrix kick %player% Speed'
+    55: 'matrix notify %player% try to move faster than usual (Speed) #1'
+    90: 'matrix notify %player% try to move faster than usual (Speed) #2'
+    220: 'matrix kick %player% Speed'
 
 # Fly Check prevents player flying up
 fly:
