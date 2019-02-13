@@ -11,3 +11,6 @@ prefix: '&7[&fMatrix&7]&r '
 
 # Kick message format
 kick-format: 'player %player% was kicked because of cheating!'
+
+# Spam warning message format
+spam-warning: 'You can''t chat that fast or chat with the same content!'
