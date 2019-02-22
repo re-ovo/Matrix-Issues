@@ -194,3 +194,13 @@ interact:
   commands:
     10: 'matrix notify %player% try to interact entity/block illegally (Interact)'
     15: 'matrix kick %player% Interact Block/Entity Wrongly'
+
+# AutoFish check prevents player using auto fish mod
+autofish:
+  # Enable this check?
+  enable: true
+
+  # Violations command map
+  commands:
+    6: 'matrix notify %player% is using auto fish (AutoFish)'
+    12: 'matrix kick %player% Auto Fish'
