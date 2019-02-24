@@ -17,6 +17,9 @@ killaura:
   # The violations start to cancel hits
   cancel_vl: 20
 
+  # Enable Machine Learning KillAura check?
+  machine_learning: true
+
   # HitBox check setting
   hitbox:
     # Max Attack Reach Distance
