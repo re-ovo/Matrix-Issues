@@ -20,24 +20,42 @@ killaura:
   # Enable Machine Learning KillAura check?
   machine_learning: true
 
-  # HitBox check setting
-  hitbox:
-    # Max Attack Reach Distance
-    max_reach: 3.45
-
-    # Movement compensation
-    # Anti reach false positives in movement
-    move_compensation: true
-
-    # Lag compensation
-    # Anti reach false positives when the player is lag
-    lag_compensation: true
-
   # Punish commands
   commands:
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
     45: 'matrix kick %player% KillAura'
+
+# HitBox check prevents player using reach or angle hacks
+hitbox:
+  # Enable this check?
+  enable: true
+
+  # Angle check settings
+  angle:
+    # Max angle
+    max: 90
+
+    # Min check distance
+    min_dist: 1.5
+
+  # Reach check settings
+  reach:
+    # Max attack distance
+    max_reach: 3.5
+
+    # Enable reach distance analyser?
+    # This is a math check that can detect some slightly reach modify
+    enable_analyser: true
+
+  # The violations start to cancel illegal hits (-1 = never cancel)
+  cancel_vl: 8
+
+  # Violation Commands
+  commands:
+    10: 'matrix notify %player% attack other entity wrongly (HitBox)'
+    15: 'matrix notify %player% attack other entity wrongly (HitBox) #2'
+    24: 'matrix kick %player% Reach/HitBox hack'
 
 # Speed Check prevent player boosting up movement speed
 # Warn: If you disable speed check,fly check will not working too!
