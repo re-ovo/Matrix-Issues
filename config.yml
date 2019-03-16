@@ -1,32 +1,68 @@
-########################################################################################################
+#########################################################################################################
 #
 #
-#                                      Matrix Anti-Cheat
-#                                          config.yml
+#                                       Matrix Anti-Cheat
+#                                           config.yml
 #
-########################################################################################################
+#                          This file contains all the configuration
+#                          options for the Matrix Anti-Cheat Plugin
+#
+#                         Proofreading/Translation By: DJRedNightMC#6027
+#             Free & Paid Plugin Proofreading for Non-Native English Speaking Developers
+#
+#########################################################################################################
 
-# Player Latency Protection
-# Decreases the amount of violations increasing for players with high latency
+############################################################
+#
+#                 Player Latency Protection
+#
+# Description: Increases the amount of violations needed to
+# trigger the Punish Commands (checks.yml) for players with
+# high latency. Good for servers with less RAM.
+#
+############################################################
 player_latency_protection:
   # Enable this feature?
   enable: true
 
-
-# Server Lag Protection
-# Automatically disables some checks when your server is lagging
+############################################################
+#
+#                   Server Lag Protection
+#
+# Description: Automatically disables some checks when your
+# server is lagging. This prevents most, but not all, false
+# positives from occuring.
+#
+############################################################
 tps_protection:
   # Enable this feature?
   enable: true
 
-  # Min TPS
+  # Minimum TPS needed to trigger protection
   min_tps: 17.0
 
-
-# Log violations to file
-# If you are using BungeeCord, I recommend not enabling this feature as it will create many useless log files
+############################################################
+#
+#                      Log Violations
+#
+# Description: Logs all violations to a file. Files can be
+# found in /plugins/Matrix/logs
+# Warning: If you are using BungeeCord, I recommend setting
+# this to FALSE. This will prevent useless log files from
+# being stored and using up precious disk space.
+#
+############################################################
 log_file: true
 
-# Disable bypass permission
-# if you don't want to operator bypass Matrix or you need to test Matrix in OP mode,you can enable this
+############################################################
+#
+#                  Deny Bypass Permission
+#
+# Description: By setting this option to TRUE, you are
+# forcing Matrix to check everyone on the server, INCLUDING
+# anyone who has Operator status. By setting this option to
+# TRUE you can run the necessary tests without having to
+# remove your operator status.
+#
+############################################################
 disable_bypass_permission: false
