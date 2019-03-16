@@ -1,16 +1,43 @@
-########################################################################################################
+#########################################################################################################
 #
 #
-#                                      Matrix Anti-Cheat
-#                                          language.yml
+#                                       Matrix Anti-Cheat
+#                                         language.yml
 #
-########################################################################################################
+#                             This file contains all the formatting
+#                          options for the way Matrix talks to Players
+#
+#                         Proofreading/Translation By: DJRedNightMC#6027
+#             Free & Paid Plugin Proofreading for Non-Native English Speaking Developers
+#
+#########################################################################################################
 
-# Message Prefix
+############################################################
+#
+#                     Message Prefix
+#
+# Description: How would you like the Matrix prefix
+# formatted?
+#
+############################################################
 prefix: '&7[&fMatrix&7]&r '
 
-# Kick message format
+############################################################
+#
+#                   Kick Message Format
+#
+# Description: This is the message broadcast to the entire
+# server when someone is kicked because of cheating!
+#
+############################################################
 kick-format: 'player %player% was kicked because of cheating!'
 
-# Spam warning message format
-spam-warning: 'You can''t chat that fast or chat with the same content!'
+############################################################
+#
+#               Spam Warning Message Format
+#
+# Description: This is the message broadcast to the a player
+# who has triggered the ChatSpam check.
+#
+############################################################
+spam-warning: 'You can''t chat that fast or send the same content over again!'
