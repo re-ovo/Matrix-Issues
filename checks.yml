@@ -297,11 +297,21 @@ velocity:
   # Enable this check?
   enable: true
 
+  # Modules List
+  # You can turn off some velocity modules here
+  # Set it to false to disable the module
+  modules:
+    vertical: true
+    horizon: true
+    air: true
+    air_direction: true
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to ignore server velocity (Anti-Knockback)'
-    15: 'matrix kick %player% Velocity/Anti-Knockback Hacks'
+    15: 'matrix notify %player% tried to ignore server velocity (Anti-Knockback) #2'
+    20: 'matrix kick %player% Velocity/Anti-Knockback Hacks'
 
 ############################################################
 #
