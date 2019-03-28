@@ -30,11 +30,38 @@ killaura:
   # (If set to true, you must also set the above check to true)
   machine_learning: true
 
-  # Max clicks per second (CPS)
-  max_cps: 15
+  # Module Settings
+  modules:
+    # AutoClicker check, it can detect player using AutoClickers
+    autoclicker:
+      # Max clicks per second (CPS)
+      max_cps: 15
+      # CPS limit check
+      cps: true
+      # click delay analyser
+      delay: true
+      # Long term CPS analyser
+      cps_long: true
 
-  # Number of violations in order to start to canceling hits
-  cancel_vl: 20
+    # Attack Accuracy check
+    accuracy:
+      # Enable accuracy check?
+      enable: true
+      # Max attack accuracy (0-100)
+      max_accuracy: 70
+      # violations will be add
+      vl_add: 20
+
+    # Other Modules
+    other:
+      # super knock back check
+      action: true
+      # yaw pattern
+      yaw: true
+      # pitch pattern
+      pitch: true
+      # snap aim check
+      snap: true
 
   # Punish Commands
   # number_of_violations: '<command>'
@@ -100,6 +127,10 @@ speed:
   # Setback violations (-1 = never setback)
   cancel_vl: 30
 
+  # Entity Speed check
+  # It can detect Vehicle Speed hacking in 1.9+
+  entity_speed: true
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
@@ -125,10 +156,6 @@ fly:
   # Setback violations (-1 = never setback)
   cancel_vl: 50
 
-  # Ability Check
-  # This check can quickly detect vanilla fly hack, but maybe not compatible with some plugins!
-  ability: true
-
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
@@ -152,6 +179,20 @@ badpackets:
 
   # Number of violations needed to start canceling illegal move packets
   cancel_vl: 30
+
+  # Enable Slow timer check?
+  # This check can detect some hacks based on slower timer
+  # But it may conflict with some optimization mod, such as LabyMod.
+  slow_timer: true
+
+  # packet queue size (seconds)
+  # smaller-> detect timer faster, higher -> more friendly for high latency players
+  cache_size: 30
+
+  # Useless verbose message output (+0 VL messages)
+  # If you don't want to see BadPackets spam in the verbose messages
+  # You can set this to false
+  verbose_useless: true
 
   # Punish Commands
   # number_of_violations: '<command>'
