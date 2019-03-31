@@ -156,6 +156,15 @@ fly:
   # Setback violations (-1 = never setback)
   cancel_vl: 50
 
+  # Strict Glide check
+  strict_glide:
+    # Enable strict glide check?
+    enable: true
+
+    # Falling distance and expectation deserve maximum deviation
+    # If difference lager than this value, the player will be flagged
+    max_diff: 0.5
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
