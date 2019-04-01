@@ -165,6 +165,11 @@ fly:
     # If difference lager than this value, the player will be flagged
     max_diff: 0.5
 
+  # Setback method (back/ground)
+  # back: teleport the player to the last legit location
+  # ground: teleport the player to the ground under the player
+  setback: back
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
