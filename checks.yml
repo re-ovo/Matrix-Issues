@@ -334,6 +334,11 @@ inventory:
   # Number of violations to start canceling the movement of items
   cancel_vl: 10
 
+  # Disable InventoryMove check
+  # If you don't need InventoryMove check, you can set this to 'true' to disable it
+  # This option ONLY works for 1.12/1.13/+ server
+  disable_invmove: false
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
@@ -427,3 +432,32 @@ autofish:
   commands:
     6: 'matrix notify %player% is using auto fish (AutoFish)'
     12: 'matrix kick %player% No Auto Fishing!'
+
+############################################################
+#
+#                         Phase
+#
+# Description: Check prevents the player people glitching
+# through blocks.
+#
+############################################################
+phase:
+  # Enable this check?
+  enable: true
+
+  # Which type of block should be exempt from phase checking?
+  # If you find any false positive, you can add that block type into it
+  # For example:
+  # exclude_types:
+  #   - 'AIR'
+  exclude_types: {}
+
+  # Drag player back?
+  setback: true
+
+  # Punish Commands
+  # number_of_violations: '<command>'
+  commands:
+    5: 'matrix notify %player% is phase into block (Phase)'
+    10: 'matrix notify %player% is phase into block (Phase) #2'
+    20: 'matrix kick %player% Phase into block'
