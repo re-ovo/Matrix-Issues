@@ -12,32 +12,17 @@
 #
 #########################################################################################################
 
-############################################################
-#
-#                     Message Prefix
-#
-# Description: How would you like the Matrix prefix
-# formatted?
-#
-############################################################
+# Message Prefix
+# Description: How would you like the Matrix prefix formatted?
 prefix: '&7[&fMatrix&7]&r '
 
-############################################################
-#
-#                   Kick Message Format
-#
-# Description: This is the message broadcast to the entire
-# server when someone is kicked because of cheating!
-#
-############################################################
+# Kick Message Format
+# Description: This is the message broadcast to the entire server when someone is kicked because of cheating!
 kick-format: 'player %player% was kicked because of cheating!'
 
-############################################################
-#
-#               Spam Warning Message Format
-#
-# Description: This is the message broadcast to the a player
-# who has triggered the ChatSpam check.
-#
-############################################################
+# Send broadcast message when kick a player?
+kick-broadcast: true
+
+# Spam Warning Message Format
+# Description: This is the message broadcast to the a player who has triggered the ChatSpam check.
 spam-warning: 'You can''t chat that fast or send the same content over again!'
