@@ -7,12 +7,17 @@ assignees: ''
 
 ---
 
-## Bypass Infomation
-**Hacked Client**: 
-**Cheat That Bypassed**: 
-**Screenshot of Cheat Settings**: 
-**Matrix Version**: 
-**Server Version**: 
+## Basic Infomation
+**Hacked client**: 
+**Cheat that bypassed**: 
+**Screenshot of cheat settings**: 
+**Video of bypass**: 
 
-## Videos:
-<!-- Provide video link of bypass here -->
+## Configuration Files
+**Link to checks.yml file**: 
+**Link to config.yml file**: 
+
+# Server Infomation
+**Server Version**: 
+**Matrix Version**: 
+**ProtocolLib Version**:

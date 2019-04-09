@@ -8,4 +8,4 @@ assignees: ''
 ---
 
 # What features/checks do you need?
-<!-- Describe it here -->
+<!-- Tell us here. -->

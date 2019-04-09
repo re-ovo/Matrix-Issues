@@ -1,16 +1,15 @@
 ---
-name: Report False Positives
-about: Report a false positive - falsely flagging someone for cheating.
-title: "[FP] "
-labels: Bug, False Positive
+name: Report Console Error
+about: Report an error found in console.
+title: "[ERROR] "
+labels: Bug, Error
 assignees: ''
 
 ---
 
 ## Basic Information
-**Verbose message(s)**: 
+**Error(s) found in console**: 
 **How/when does this happen**: 
-**Video of false positive**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
