@@ -1,20 +1,20 @@
 ---
 name: Report Error
-about: Report Console Error
-title: ''
-labels: ''
+about: Report an error found in console.
+title: "[ERROR] "
+labels: Bug, Error
 assignees: ''
 
 ---
 
-## Console Error
+## Console Error:
 <!-- Provide error messages here -->
 
-## When the error happens?
+## How/when does the error happen?
 <!-- Describe when the error happens -->
 
 # Server Infomation
-**Server Version**:
-**Matrix Version**:
-**ProtocolLib Version**:
+**Server Version**: 
+**Matrix Version**: 
+**ProtocolLib Version**: 
 **Is you config files newest?**: (yes/no)

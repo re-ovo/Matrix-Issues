@@ -1,17 +1,18 @@
 ---
-name: Report Bypass
-about: Report some cheats bypassed
-title: ''
-labels: ''
-assignees: jiangdashao
+name: Report Bypassing Cheats
+about: Report cheats that bypass Matrix.
+title: "[BYPASS] "
+labels: Bug, Bypass
+assignees: ''
 
 ---
 
 ## Bypass Infomation
-**Hack Client**:
-**Bypassed Hacking Type**:
-**Matrix Version**:
-**Server Version**:
+**Hacked Client**: 
+**Cheat That Bypassed**: 
+**Screenshot of Cheat Settings**: 
+**Matrix Version**: 
+**Server Version**: 
 
-## Videos
-<!-- Provide bypass video link here -->
+## Videos:
+<!-- Provide video link of bypass here -->

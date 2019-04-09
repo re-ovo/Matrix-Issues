@@ -1,8 +1,8 @@
 ---
 name: Feature Request
-about: Request some new checks or new feature
-title: ''
-labels: ''
+about: Request missing checks/features.
+title: "[REQUEST] "
+labels: Feature Request
 assignees: ''
 
 ---
