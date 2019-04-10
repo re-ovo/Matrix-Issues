@@ -365,6 +365,8 @@ velocity:
     horizon: true
     air: true
     air_direction: true
+    ground: true
+    delay: true
 
   # Punish Commands
   # number_of_violations: '<command>'
