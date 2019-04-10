@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## Basic Infomation
+## Basic Information
 **Hacked client**: 
 **Cheat that bypassed**: 
 **Screenshot of cheat settings**: 
