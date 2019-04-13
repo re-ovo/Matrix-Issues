@@ -131,6 +131,9 @@ speed:
   # It can detect Vehicle Speed hacking in 1.9+
   entity_speed: true
 
+  # Enable sprint direction check?
+  sprint_direction: true
+
   # Punish Commands
   # number_of_violations: '<command>'
   commands:
