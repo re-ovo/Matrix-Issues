@@ -9,6 +9,7 @@ assignees: ''
 
 ## Basic Information
 **Hacked client**: 
+**Link to hacked client**: 
 **Cheat that bypassed**: 
 **Screenshot of cheat settings**: 
 **Video of bypass**: 
