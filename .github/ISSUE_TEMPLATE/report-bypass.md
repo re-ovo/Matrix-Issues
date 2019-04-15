@@ -13,6 +13,7 @@ assignees: ''
 **Cheat that bypassed**: 
 **Screenshot of cheat settings**: 
 **Video of bypass**: 
+**Other information**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
