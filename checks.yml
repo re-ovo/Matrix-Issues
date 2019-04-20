@@ -168,6 +168,9 @@ fly:
     # If difference lager than this value, the player will be flagged
     max_diff: 0.5
 
+  # Enable ElytraFlight check?
+  check_elytra_flight: true
+
   # Setback method (back/ground)
   # back: teleport the player to the last legit location
   # ground: teleport the player to the ground under the player
@@ -196,11 +199,6 @@ badpackets:
 
   # Number of violations needed to start canceling illegal move packets
   cancel_vl: 30
-
-  # Enable Slow timer check?
-  # This check can detect some hacks based on slower timer
-  # But it may conflict with some optimization mod, such as LabyMod.
-  slow_timer: true
 
   # packet queue size (seconds)
   # smaller-> detect timer faster, higher -> more friendly for high latency players
@@ -368,7 +366,6 @@ velocity:
     horizon: true
     air: true
     air_direction: true
-    ground: true
     delay: true
 
   # Punish Commands
