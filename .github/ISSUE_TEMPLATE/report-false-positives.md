@@ -11,6 +11,7 @@ assignees: ''
 **Verbose message(s)**: 
 **How/when does this happen**: 
 **Video of false positive**: 
+**Other information**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
