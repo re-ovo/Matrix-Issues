@@ -10,6 +10,7 @@ assignees: ''
 ## Basic Information
 **Error(s) found in console**: 
 **How/when does this happen**: 
+**Other information**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
@@ -18,4 +19,4 @@ assignees: ''
 # Server Infomation
 **Server Version**: 
 **Matrix Version**: 
-**ProtocolLib Version**:
+**ProtocolLib Version**: 
