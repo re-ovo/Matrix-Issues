@@ -2,13 +2,18 @@
 name: Report False Positives
 about: Report a false positive - falsely flagging someone for cheating.
 title: "[FP] "
-labels: Bug, False Positive
+labels: False Positive
 assignees: ''
 
 ---
 
-## Basic Information
-**Verbose message(s)**: 
+## Before Reporting
+- [ ] Matrix is up-to-date
+- [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
+- [ ] Config.yml and checks.yml have been reset to default
+
+## Issue Information
+**Verbose messages**: 
 **How/when does this happen**: 
 **Video of false positive**: 
 **Other information**: 

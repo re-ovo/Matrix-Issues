@@ -2,12 +2,17 @@
 name: Report Console Error
 about: Report an error found in console.
 title: "[ERROR] "
-labels: Bug, Error
+labels: Error
 assignees: ''
 
 ---
 
-## Basic Information
+## Before Reporting
+- [ ] Matrix is up-to-date
+- [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
+- [ ] Config.yml and checks.yml have been reset to default
+
+## Issue Information
 **Error(s) found in console**: 
 **How/when does this happen**: 
 **Other information**: 
@@ -19,4 +24,4 @@ assignees: ''
 # Server Infomation
 **Server Version**: 
 **Matrix Version**: 
-**ProtocolLib Version**: 
+**ProtocolLib Version**:

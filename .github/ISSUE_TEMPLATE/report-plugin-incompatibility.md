@@ -2,15 +2,20 @@
 name: Report Plugin Incompatibility
 about: Report a plugin that doesn't run well with Matrix.
 title: "[INCOMPATIBILITY] "
-labels: Bug
+labels: ''
 assignees: ''
 
 ---
 
-## Basic Information
-**Incompatible plugin & plugin version**: 
-**Verbose message(s)**: 
-**Console error(s)**: 
+## Before Reporting
+- [ ] Matrix is up-to-date
+- [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
+- [ ] Config.yml and checks.yml have been reset to default
+- [ ] The incompatible plugin is up-to-date
+
+## Issue Information
+**Incompatible plugin**: 
+**Verbose messages (or) console errors**: 
 **How/when does this happen**: 
 **Video of incompatibility**: 
 **Other information**: 
@@ -22,4 +27,4 @@ assignees: ''
 # Server Infomation
 **Server version**: 
 **Matrix version**: 
-**ProtocolLib version**: 
+**ProtocolLib version**:
