@@ -13,6 +13,7 @@ assignees: ''
 **Console error(s)**: 
 **How/when does this happen**: 
 **Video of incompatibility**: 
+**Other information**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
@@ -21,4 +22,4 @@ assignees: ''
 # Server Infomation
 **Server version**: 
 **Matrix version**: 
-**ProtocolLib version**:
+**ProtocolLib version**: 
