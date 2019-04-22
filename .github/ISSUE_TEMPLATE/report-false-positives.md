@@ -7,10 +7,10 @@ assignees: ''
 
 ---
 
-## Before Reporting
-- [ ] Matrix is up-to-date
+## Troubleshooting Information
+- [ ] Matrix and ProtocolLib are up-to-date
 - [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
-- [ ] Config.yml and checks.yml have been reset to default
+- [ ] The issue happens on default config.yml and checks.yml
 
 ## Issue Information
 **Verbose messages**: 

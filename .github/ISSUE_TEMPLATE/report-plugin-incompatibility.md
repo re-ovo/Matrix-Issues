@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-## Before Reporting
-- [ ] Matrix is up-to-date
-- [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
-- [ ] Config.yml and checks.yml have been reset to default
+## Troubleshooting Information
+- [ ] Matrix and ProtocolLib are up-to-date
 - [ ] The incompatible plugin is up-to-date
+- [ ] Matrix is running on a 1.8, 1.12, or 1.13 server
+- [ ] The issue happens on default config.yml and checks.yml
 
 ## Issue Information
 **Incompatible plugin**: 
