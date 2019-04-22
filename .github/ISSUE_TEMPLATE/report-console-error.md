@@ -14,15 +14,11 @@ assignees: ''
 - [ ] The issue happens on default config.yml and checks.yml
 
 ## Issue Information
+**Server version**: 
 **Error(s) found in console**: 
 **How/when does this happen**: 
 **Other information**: 
 
 ## Configuration Files
 **Link to checks.yml file**: 
-**Link to config.yml file**: 
-
-# Server Infomation
-**Server Version**: 
-**Matrix Version**: 
-**ProtocolLib Version**:
+**Link to config.yml file**:

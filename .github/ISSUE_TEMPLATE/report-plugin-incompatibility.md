@@ -15,6 +15,7 @@ assignees: ''
 - [ ] The issue happens on default config.yml and checks.yml
 
 ## Issue Information
+**Server version**: 
 **Incompatible plugin**: 
 **Verbose messages (or) console errors**: 
 **How/when does this happen**: 
@@ -23,9 +24,4 @@ assignees: ''
 
 ## Configuration Files
 **Link to checks.yml file**: 
-**Link to config.yml file**: 
-
-# Server Infomation
-**Server version**: 
-**Matrix version**: 
-**ProtocolLib version**:
+**Link to config.yml file**:
