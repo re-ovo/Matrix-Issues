@@ -2,7 +2,7 @@
 name: Report Plugin Incompatibility
 about: Report a plugin that doesn't run well with Matrix.
 title: "[INCOMPATIBILITY] "
-labels: ''
+labels: Incompatibility
 assignees: ''
 
 ---
