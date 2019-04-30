@@ -204,6 +204,17 @@ badpackets:
   # smaller-> detect timer faster, higher -> more friendly for high latency players
   cache_size: 30
 
+  # Tick Rate check
+  # It can detect some smooth Timer (1.01~1.05 timer fast)
+  tick_rate:
+    # Enable this check
+    enable: true
+
+    # Cache size (Seconds)
+    # Bigger: Less false positives for laggy players
+    # Smaller: More strict, detect Timer hack fast
+    cache_size: 5
+
   # Useless verbose message output (+0 VL messages)
   # If you don't want to see BadPackets spam in the verbose messages
   # You can set this to false
