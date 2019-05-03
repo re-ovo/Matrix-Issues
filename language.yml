@@ -26,3 +26,8 @@ kick-broadcast: true
 # Spam Warning Message Format
 # Description: This is the message broadcast to the a player who has triggered the ChatSpam check.
 spam-warning: 'You can''t chat that fast or send the same content over again!'
+
+# Verbose Messages
+# Description: How would you like the verbose messages formatted?
+# Default: '&7%player% failed &c%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps%'
+verbose-format: '&7%player% failed &c%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps%'
