@@ -42,6 +42,8 @@ killaura:
       delay: true
       # Long term CPS analyser
       cps_long: true
+      # Packet Pattern
+      packet: true
 
     # Attack Accuracy check
     accuracy:
@@ -170,6 +172,11 @@ fly:
 
   # Enable ElytraFlight check?
   check_elytra_flight: true
+
+  # NoFall check
+  nofall:
+    # Force deal damage after setback?
+    damage: true
 
   # Setback method (back/ground)
   # back: teleport the player to the last legit location
