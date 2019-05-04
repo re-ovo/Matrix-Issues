@@ -17,15 +17,15 @@
 prefix: '&7[&fMatrix&7]&r '
 
 # Kick Message Format
-# Description: This is the message broadcast to the entire server when someone is kicked because of cheating!
+# Description: This is the message sent to the entire server when someone is kicked for cheating!
 kick-format: 'player %player% was kicked because of cheating!'
 
-# Send broadcast message when kick a player?
+# Send broadcast message when kicking a player?
 kick-broadcast: true
 
 # Spam Warning Message Format
-# Description: This is the message broadcast to the a player who has triggered the ChatSpam check.
-spam-warning: 'You can''t chat that fast or send the same content over again!'
+# Description: This is the message sent to a player who has triggered the ChatSpam check.
+spam-warning: 'You can''t send messages that fast or send the same message over and over again!'
 
 # Verbose Messages
 # Description: How would you like the verbose messages formatted?
