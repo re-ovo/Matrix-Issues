@@ -38,12 +38,20 @@ killaura:
       max_cps: 15
       # CPS limit check
       cps: true
+      # Violations to add
+      vl_add: 10
       # Click delay analyser
       delay: true
+      # Violations to add
+      vl_add: 20
       # Long term CPS analyser
       cps_long: true
+      # Violations to add
+      vl_add: 5
       # Packet Pattern
       packet: true
+      # Violations to add
+      vl_add: 8
 
     # Attack Accuracy check
     accuracy:
@@ -58,12 +66,23 @@ killaura:
     other:
       # SuperKnockback check
       action: true
+      # Violations to add
+      vl_add: 15
       # Yaw Pattern check
       yaw: true
+      # Violations to add
+      vl_add: 10
       # Pitch pattern check
       pitch: true
+      # Violations to add
+      vl_add: 10
       # Aim Snapping check
       snap: true
+      # Violations to add
+      vl_add: 7
+      
+  # Violations needed to cancel illegal hits (-1 = never cancel)
+  cancel_vl: 8
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -91,6 +110,8 @@ hitbox:
 
     # Minimum distance check
     min_dist: 1.5
+    # Violations to add
+    vl_add: 5
 
   # Reach check settings
   reach:
@@ -100,6 +121,8 @@ hitbox:
     # Enable reach distance analyser?
     # This is a math check that can detect slightly modified reach hacks
     enable_analyser: true
+    # Violations to add
+    vl_add: 5
 
   # Violations needed to cancel illegal hits (-1 = never cancel)
   cancel_vl: 8
@@ -131,9 +154,23 @@ speed:
   # Entity Speed check
   # It can detect Vehicle Speed hacking in 1.9+
   entity_speed: true
+    # Violations to add
+    vl_add: 5
 
   # Enable sprint direction check?
   sprint_direction: true
+    # Violations to add
+    vl_add: 15
+
+  # Enable limit detection?
+  limit: true
+    # Violations to add
+    vl_add: 8
+
+   #Enable clip detection?
+   clip: true
+    # Violations to add
+    vl_add: 8
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -167,6 +204,8 @@ fly:
     # Falling distance and expectation deserve maximum deviation
     # If difference lager than this value, the player will be flagged
     max_diff: 0.5
+    # Violations to add
+    vl_add: 5
 
   # Enable ElytraFlight check?
   check_elytra_flight: true
@@ -175,10 +214,18 @@ fly:
   nofall:
     # Force deal damage after setback?
     damage: true
+  
+  #Upwards check.
+  up:
+    #Enable this check?
+    enable: true
+    # Violations to add
+    vl_add: 8
 
-  # Setback method (back/ground)
+  # Setback method (back/ground/AAC)
   # back: teleport the player to the last legit location
   # ground: teleport the player to the ground under the player
+  # AAC: Uses AAC's method of teleporting the player downwards.
   setback: back
 
   # Violation Thresholds
@@ -219,6 +266,8 @@ badpackets:
     # Bigger: Less false positives for laggy players
     # Smaller: More strict, detect Timer hack fast
     cache_size: 5
+    # Violations to add
+    vl_add: 5
 
   # Useless verbose message output (+0 VL messages)
   # If you don't want to see BadPackets spam in the verbose messages
@@ -307,6 +356,21 @@ block:
   # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
   cancel_vl: 15
 
+  # Eagle check.
+  eagle:
+    # Enable this check?
+    enable: true
+    # Violations to add
+    vl_add: 5
+
+  # SafeWalk check.
+  # Checks to see if the player is falling when at the edge of a block.
+  safewalk:
+    # Enable this check?
+    enable: true
+    # Violations to add
+    vl_add: 7
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -324,6 +388,26 @@ block:
 jesus:
   # Enable this check?
   enable: true
+
+  # Updwards check.
+  # Checks to see if the player is going up too fast.
+  upwards:
+    # Enable this check?
+    enable: true
+    # Max blocks per second the player is allowed going. (I think this is the value)
+    max-speed: 0.35
+    # Violations to add
+    vl_add: 5
+
+  # Speed check.
+  # Checks to see if the player is going to fast.
+  speed:
+    # Enable this check?
+    enable: true
+    # Max blocks per second the player is allowed going.
+    max-speed: 2.3
+    # Violations to add
+    vl_add: 7
 
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 15
@@ -355,6 +439,60 @@ inventory:
   # This option ONLY works for 1.12/1.13/+ server
   disable_invmove: false
 
+  #I just did a copy-paste fron AACAP
+  
+    # This part uses pre-trained TensorFlow models to check for common bot-like clicking.
+    AutomatedClickHeuristic:
+      # Do you want to enable the automated click heuristic part
+      enabled: true
+    # This part flags hitting while the inventory is open.
+    # This part will add 10 vl.
+    Hit:
+      # Do you want to enable the hit part
+      enabled: true
+      # Violation before Matrix starts to cancel the hits.
+      # Set this to 0 to never cancel hits.
+      cancel_vl: 30
+    # The move part detects movement when a player is still in his inventory.
+    # This part will add 3 vl when a player moves illegally and 10 vl if a player jumps illegally.
+    Move:
+      # Do you want to enable the move part
+      enabled: true
+      # Violation before Matrix starts to cancel the movements.
+      # Set this to 0 to never cancel movement.
+      cancel_vl: 30
+      # The minimum TPS the server must have to activate this check
+      # Low TPS will cause an extreme amount of false positives.
+      min_tps: 19.5
+      # This allows to add more lenience on servers with very high-ping players by stretching the no-punish time after
+      # opening an inventory.
+      # Normal connections are already covered by the default values.
+      lenience_millis: 0
+    # The MultiInteraction part prevents players from moving more than one item per tick
+    # This part will add 1 to 3 vl, depending on the severity of the violation.
+    MultiInteraction:
+      # Do you want to enable the MultiInteraction part
+      enabled: true
+      # Violation before Matrix starts to cancel the interacts.
+      # Set this to 0 to never cancel interacts.
+      cancel_vl: 18
+      # If a player has a ping higher than that value he bypasses the check
+      # Please make sure that you have some pingspoofer protection enabled if you use this feature
+      # Set this to -1 to disable
+      max_ping: 400
+      # The minimum TPS the server must have to activate this check
+      # Low TPS will cause an extreme amount of false positives.
+      min_tps: 18.5
+    # The rotation part detects head movement while having an open inventory.
+    # This part will add 1 vl.
+    Rotation:
+      # Do you want to enable the rotation part
+      enabled: true
+    # This part detects inventory interactions while a player is sprinting or sneaking.
+    # This part will add 20 vl.
+    Sprinting:
+      # Do you want to enable the sprinting part
+      enabled: true
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -378,10 +516,20 @@ velocity:
   # Set it to false to disable the module
   modules:
     vertical: true
+      # Violations to add
+      vl_add: 4
     horizon: true
+      # Violations to add
+      vl_add: 9
     air: true
+      # Violations to add
+      vl_add: 4
     air_direction: true
+      # Violations to add
+      vl_add: 5
     delay: true
+      # Violations to add
+      vl_add: 5
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -396,11 +544,12 @@ velocity:
 #
 # Description: Check prevents a player from spamming
 # messages in the servers chat.
+# Disabled by default because I hate chat checks. Please remove.
 #
 ############################################################
 chat:
   # Enable this check?
-  enable: true
+  enable: false
 
   # Minimum amount of time between messages (Seconds)
   min_time: 3
@@ -420,6 +569,7 @@ chat:
 #
 # Description: Check prevents the player from illegally
 # interacting with entities and blocks.
+# Shouldn't this just be in the Block check?
 #
 ############################################################
 interact:
@@ -443,6 +593,37 @@ interact:
 autofish:
   # Enable this check?
   enable: true
+
+ # I just did a copy paste from aacap again
+
+    # The inhuman_reaction part recognizes very fast reaction speeds to detect AutoFishing mods.
+    # This might cause some false positives with experienced fishers.
+    # This will add up to 6 vl, depending on the reaction speed.
+    inhuman_reaction:
+      # Should this part of the check be enabled
+      enabled: true
+      # How many milliseconds should have passed before a fishing action counts as legit.
+      # This also influences the given vl according to a linear distribution.
+      fishing_milliseconds: 145
+    # The consistency part recognizes static times between a successful catch and fishing again.
+    # This check has less to none false positives, especially with a high event count
+    # Depending on how accurate the consistency is players will receive between 1 and 15 vl
+    consistency:
+      # Should this part of the check be enabled
+      enabled: true
+      # How many FishEvents should be checked by the consistency check
+      consistency_events: 5
+      # The minimum offset a player has to have in order to count as non-cheating.
+      # Measured in ms
+      violation_offset: 30
+      # After how many failed attempts to fish between two successful attempts should a player be exempted from the
+      # consistency part?
+      #
+      # This is a countermeasure for afk fishing farm false positives.
+      # Do not extensively lower this value because bots with a custom fail-rate might not be detected.
+      #
+      # If you do not allow afk fishing farms on your server set this to a negative value.
+      maximum_fails: 12
 
   # Violation Thresholds
   # number_of_violations: '<command>'
