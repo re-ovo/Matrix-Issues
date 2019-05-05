@@ -27,18 +27,18 @@ killaura:
   enable: true
 
   # Enable Machine Learning KillAura check?
-  # (If set to true, you must also set the above check to true)
+  # Killaura must also be enabled
   machine_learning: true
 
   # Module Settings
   modules:
-    # AutoClicker check, it can detect player using AutoClickers
+    # AutoClicker Check
     autoclicker:
       # Max clicks per second (CPS)
       max_cps: 15
       # CPS limit check
       cps: true
-      # click delay analyser
+      # Click delay analyser
       delay: true
       # Long term CPS analyser
       cps_long: true
@@ -49,23 +49,23 @@ killaura:
     accuracy:
       # Enable accuracy check?
       enable: true
-      # Max attack accuracy (0-100)
+      # Maximum attack accuracy (0-100)
       max_accuracy: 70
-      # violations will be add
+      # Violations to add
       vl_add: 20
 
-    # Other Modules
+    # Other modules
     other:
-      # super knock back check
+      # SuperKnockback check
       action: true
-      # yaw pattern
+      # Yaw Pattern check
       yaw: true
-      # pitch pattern
+      # Pitch pattern check
       pitch: true
-      # snap aim check
+      # Aim Snapping check
       snap: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
@@ -86,25 +86,25 @@ hitbox:
 
   # Angle check settings
   angle:
-    # Max angle (degrees)
+    # Maximum angle (degrees)
     max: 90
 
-    # Min distance check
+    # Minimum distance check
     min_dist: 1.5
 
   # Reach check settings
   reach:
-    # Max attack reach distance
+    # Maximum attack reach distance
     max_reach: 3.5
 
     # Enable reach distance analyser?
     # This is a math check that can detect slightly modified reach hacks
     enable_analyser: true
 
-  # Number of violations in order to start to canceling illegal hits (-1 = never cancel)
+  # Violations needed to cancel illegal hits (-1 = never cancel)
   cancel_vl: 8
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox)'
@@ -121,12 +121,11 @@ hitbox:
 ############################################################
 speed:
   # Enable this check?
-  # Warning: If you disable
-  # speed check, fly check
-  # will not work!
+  # Warning: Will also disable
+  # flight detection.
   enable: true
 
-  # Setback violations (-1 = never setback)
+  # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 30
 
   # Entity Speed check
@@ -136,7 +135,7 @@ speed:
   # Enable sprint direction check?
   sprint_direction: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     55: 'matrix notify %player% tried to move faster than usual (Speed) #1'
@@ -153,12 +152,11 @@ speed:
 ############################################################
 fly:
   # Enable this check?
-  # Warning: If you enable
-  # fly check, speed check
-  # MUST be ENABLED!
+  # Warning: Speed check must
+  # also be enabled.
   enable: true
 
-  # Setback violations (-1 = never setback)
+  # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 50
 
   # Strict Glide check
@@ -183,7 +181,7 @@ fly:
   # ground: teleport the player to the ground under the player
   setback: back
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     50: 'matrix notify %player% tried to fly (Fly) #1'
@@ -204,7 +202,7 @@ badpackets:
   # Enable this check?
   enable: true
 
-  # Number of violations needed to start canceling illegal move packets
+  # Violations needed to cancel illegal movement packets (-1 = never cancel)
   cancel_vl: 30
 
   # packet queue size (seconds)
@@ -214,7 +212,7 @@ badpackets:
   # Tick Rate check
   # It can detect some smooth Timer (1.01~1.05 timer fast)
   tick_rate:
-    # Enable this check
+    # Enable this check?
     enable: true
 
     # Cache size (Seconds)
@@ -227,7 +225,7 @@ badpackets:
   # You can set this to false
   verbose_useless: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     100: 'matrix notify %player% is sending unusual packets to server (BadPackets) #1'
@@ -246,11 +244,10 @@ fastuse:
   # Enable this check?
   enable: true
 
-  # Number of violations needed to start canceling use of item
-  # (-1 = Never Cancel)
+  # Violations needed to cancel illegal item use (-1 = never cancel)
   cancel_vl: 5
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     5: 'matrix notify %player% tried to use an item faster than usual (FastUse)'
@@ -268,10 +265,10 @@ fastbow:
   # Enable this check?
   enable: true
 
-  # Number of violations needed to start canceling use of bow
+  # Violations needed to cancel illegal bow use (-1 = never cancel)
   cancel_vl: 7
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     5: 'matrix notify %player% is trying to shoot a bow too quickly (FastBow)'
@@ -289,7 +286,7 @@ fastheal:
   # Enable this check?
   enable: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to regain health too quickly (FastHeal)'
@@ -307,10 +304,10 @@ block:
   # Enable this check?
   enable: true
 
-  # Number of violations to start canceling the placing/breaking of blocks
+  # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
   cancel_vl: 15
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to place/break a block too quickly (FastPlace)'
@@ -328,10 +325,10 @@ jesus:
   # Enable this check?
   enable: true
 
-  # Number of violations to start canceling liquid movement
+  # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 15
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     15: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
@@ -350,7 +347,7 @@ inventory:
   # Enable this check?
   enable: true
 
-  # Number of violations to start canceling the movement of items
+  # Violations needed to cancel illegal movements of items (-1 = never cancel)
   cancel_vl: 10
 
   # Disable InventoryMove check
@@ -358,7 +355,7 @@ inventory:
   # This option ONLY works for 1.12/1.13/+ server
   disable_invmove: false
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% moved items in inventory too quickly (ChestSteal)'
@@ -386,7 +383,7 @@ velocity:
     air_direction: true
     delay: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to ignore server velocity (Anti-Knockback)'
@@ -408,10 +405,10 @@ chat:
   # Minimum amount of time between messages (Seconds)
   min_time: 3
 
-  # Number of violations to start canceling messages from being sent
+  # Violations needed to cancel sent messages (-1 = never cancel)
   cancel_vl: 3
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     4: 'matrix notify %player% is spamming the chat (ChatSpam)'
@@ -429,7 +426,7 @@ interact:
   # Enable this check?
   enable: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to illegally interact with Entity/Block (Interact)'
@@ -447,7 +444,7 @@ autofish:
   # Enable this check?
   enable: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     6: 'matrix notify %player% is using auto fish (AutoFish)'
@@ -472,10 +469,10 @@ phase:
   #   - 'AIR'
   exclude_types: {}
 
-  # Drag player back?
+  # Cancel malicious movements
   setback: true
 
-  # Punish Commands
+  # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     5: 'matrix notify %player% is phase into block (Phase)'
