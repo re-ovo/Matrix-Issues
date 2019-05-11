@@ -135,6 +135,13 @@ speed:
   # Enable sprint direction check?
   sprint_direction: true
 
+  # Enable FastClimb/FastLadder check?
+  fastclimb: true
+
+  # Enable NoSlow check?
+  # It can detect player moving faster when eating/sneaking/shooting bow
+  noslow: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -294,10 +301,10 @@ fastheal:
 
 ############################################################
 #
-#                  FastPlace/Block Interact
+#                         Block
 #
 # Description: Check prevents the player from breaking,
-# placing, or interacting with a block too quikcly.
+# placing, or bridge/tower up quickly
 #
 ############################################################
 block:
@@ -306,6 +313,20 @@ block:
 
   # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
   cancel_vl: 15
+
+  # Modules List
+  # You can turn off some modules here
+  modules:
+    # It can detect player breaking block faster
+    fastbreak: true
+    # It can detect player placing block faster
+    fastplace: true
+    # It can detect player bridging faster
+    scaffold: true
+    # It can detect player towering up faster
+    tower: true
+    # It can detect player placing block without swing hand
+    noswing: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -350,6 +371,10 @@ inventory:
   # Violations needed to cancel illegal movements of items (-1 = never cancel)
   cancel_vl: 10
 
+  # Enable ChestStealer check?
+  # It can detect player taking items out of chest faster
+  chest_stealer: true
+
   # Disable InventoryMove check
   # If you don't need InventoryMove check, you can set this to 'true' to disable it
   # This option ONLY works for 1.12/1.13/+ server
@@ -382,6 +407,7 @@ velocity:
     air: true
     air_direction: true
     delay: true
+    expect: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -425,6 +451,15 @@ chat:
 interact:
   # Enable this check?
   enable: true
+
+  # Modules List
+  modules:
+    # It can detect player breaking blocks through walls
+    break_block: true
+    # It can detect player attacking other entities through walls
+    attack: true
+    # It can detect player interacting blocks too far away
+    block_reach: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
