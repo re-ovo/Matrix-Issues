@@ -12,28 +12,19 @@
 #
 #########################################################################################################
 
-############################################################
-#
-#                 Player Latency Protection
-#
+# Player Latency Protection
 # Description: Increases the amount of violations needed to
 # trigger the Punish Commands (checks.yml) for players with
 # high latency. Good for servers with less RAM.
-#
-############################################################
 player_latency_protection:
   # Enable this feature?
   enable: true
 
-############################################################
-#
-#                   Server Lag Protection
-#
+
+# Server Lag Protection
 # Description: Automatically disables some checks when your
 # server is lagging. This prevents most, but not all, false
 # positives from occuring.
-#
-############################################################
 tps_protection:
   # Enable this feature?
   enable: true
@@ -41,28 +32,27 @@ tps_protection:
   # Minimum TPS needed to trigger protection
   min_tps: 17.0
 
-############################################################
-#
-#                      Log Violations
-#
+# Log Violations
 # Description: Logs all violations to a file. Files can be
 # found in /plugins/Matrix/logs
 # Warning: If you are using BungeeCord, I recommend setting
 # this to FALSE. This will prevent useless log files from
 # being stored and using up precious disk space.
-#
-############################################################
 log_file: true
 
-############################################################
-#
-#                  Deny Bypass Permission
-#
+# Deny Bypass Permission
 # Description: By setting this option to TRUE, you are
 # forcing Matrix to check everyone on the server, INCLUDING
 # anyone who has Operator status. By setting this option to
 # TRUE you can run the necessary tests without having to
 # remove your operator status.
-#
-############################################################
 disable_bypass_permission: false
+
+# Disabled components
+# You can disable a specific sub check here, instead of disabling
+# the whole check, you can find component name in the end of verbose
+# messages
+# Example: If you add "speed.web" in the blow, the fast web check will
+# be disabled
+disabled_components:
+  - 'example entry'
