@@ -12,6 +12,9 @@
 #
 #########################################################################################################
 
+# Check update when starting up?
+check_update: true
+
 # Player Latency Protection
 # Description: Increases the amount of violations needed to
 # trigger the Punish Commands (checks.yml) for players with
