@@ -405,7 +405,6 @@ velocity:
     vertical: true
     horizon: true
     air: true
-    air_direction: true
     delay: true
     expect: true
 
