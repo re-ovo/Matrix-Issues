@@ -26,6 +26,11 @@ killaura:
   # Enable KillAura check?
   enable: true
 
+  # Canceling system
+  # It can cancel attack damage when the player is considered to be cheating (-1 = never canceling)
+  # Note: Only some modules have canceling system, not all
+  cancel_vl: 3
+
   # Enable Machine Learning KillAura check?
   # Killaura must also be enabled
   machine_learning: true
