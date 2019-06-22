@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: checks.yml  | last edit version: @2.0.0
+#             file: checks.yml  | last edit version: @2.0.2
 #
 # Useful Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -107,6 +107,10 @@ killaura:
     superkb:
       enable: true
       vl_weight: 5
+    # auto block
+    auto_block:
+      enable: true
+      vl_weight: 4
 
   # Violation Thresholds
   # number_of_violations: '<command>'
