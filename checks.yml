@@ -336,7 +336,7 @@ block:
     # It can detect player placing block faster
     fastplace:
       enable: true
-      vl_weight: 7
+      vl_weight: 1
     # It can detect player bridging faster
     scaffold:
       enable: true
