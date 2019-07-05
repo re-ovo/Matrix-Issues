@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: config.yml  | last edit version: @2.0.0
+#             file: config.yml  | last edit version: @2.0.4
 #
 # Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -53,6 +53,11 @@ log_file: true
 # TRUE you can run the necessary tests without having to
 # remove your operator status.
 disable_bypass_permission: false
+
+## Relog time
+# How long after a player is kicked should he be allowed to log in (seconds)
+# also, you can set -1 to disable this feature
+relog_time: 5
 
 ## Disabled components
 # You can disable a specific sub check here, instead of disabling
