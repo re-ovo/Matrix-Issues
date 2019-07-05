@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: checks.yml  | last edit version: @2.0.2
+#             file: checks.yml  | last edit version: @2.0.4
 #
 # Useful Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -111,6 +111,10 @@ killaura:
     auto_block:
       enable: true
       vl_weight: 4
+    # combat style check
+    style:
+      enable: true
+      vl_weight: 10
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -326,6 +330,12 @@ block:
   # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
   cancel_vl: 15
 
+  # Scaffold drag back system
+  # It can drag player back instead of canceling placing the block if they are using scaffold cheat
+  drag_back:
+    enable: true
+    start_vl: 3
+
   # Modules List
   # You can turn off some modules here
   modules:
@@ -344,7 +354,7 @@ block:
         safewalk: 4
         expand: 3
         limit: 1
-        head: 3
+        head: 5
         simple: 3
     # It can detect player towering up faster
     tower:
@@ -430,6 +440,9 @@ velocity:
     expect:
       enable: true
       vl_weight: 2
+    pattern:
+      enable: true
+      vl_weight: 7
 
   # Violation Thresholds
   # number_of_violations: '<command>'
