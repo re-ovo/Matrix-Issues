@@ -513,7 +513,7 @@ autofish:
   # number_of_violations: '<command>'
   commands:
     6: 'matrix notify %player% is using auto fish (AutoFish)'
-    12: 'matrix kick %player% No Auto Fishing!'
+    15: 'matrix kick %player% No Auto Fishing!'
 
 ## Phase
 # Check prevents the player people glitching through blocks.
@@ -536,4 +536,3 @@ phase:
   commands:
     5: 'matrix notify %player% is phase into block (Phase)'
     10: 'matrix notify %player% is phase into block (Phase) #2'
-    20: 'matrix kick %player% Phase into block'
