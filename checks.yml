@@ -32,7 +32,7 @@ killaura:
     # It uses machine learning algorithms to distinguish whether players cheat or not.
     machine_learning:
       enable: true
-      vl_weight: 20
+      vl_weight: 15
     # AutoClicker check
     # Detecting player using auto clicker software
     auto_clicker:
@@ -150,14 +150,10 @@ hitbox:
   # Reach check settings
   reach:
     # Maximum attack reach distance
-    max_reach: 3.5
-
-    # Enable reach distance analyser?
-    # This is a math check that can detect slightly modified reach hacks
-    enable_analyser: true
+    max_reach: 3.1
 
   # Violations needed to cancel illegal hits (-1 = never cancel)
-  cancel_vl: 8
+  cancel_vl: 4
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -213,9 +209,6 @@ fly:
     # Falling distance and expectation deserve maximum deviation
     # If difference lager than this value, the player will be flagged
     max_diff: 0.5
-
-  # Enable ElytraFlight check?
-  check_elytra_flight: true
 
   # NoFall check
   nofall:
