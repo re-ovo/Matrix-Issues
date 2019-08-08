@@ -152,6 +152,12 @@ hitbox:
     # Maximum attack reach distance
     max_reach: 3.1
 
+    # How much lenient should be when a player is moving
+    # Higher = More lenient for moving players
+    # Suggest Value: 1.0 ~ 1.5
+    # Reach tolerance value = move_dist * lag_tick * move_lenient
+    move_lenient: 1.1
+
   # Violations needed to cancel illegal hits (-1 = never cancel)
   cancel_vl: 4
 
