@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: checks.yml  | last edit version: @2.1.1
+#             file: checks.yml  | last edit version: @2.2.0
 #
 # Useful Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -136,13 +136,15 @@ hitbox:
   # Enable HitBox check?
   enable: true
 
-  # Angle check settings
-  angle:
-    # Maximum angle (degrees)
-    max: 90
-
-    # Minimum distance check
-    min_dist: 1.5
+  # Direction check settings
+  direction:
+    # HitBox compensation
+    # Smaller = More sensitive
+    compensation:
+      # Horizon hitBox compensation
+      xz: 0.8
+      # Vertical hitBox compensation
+      y: 0.4
 
     # Violation weight
     vl_weight: 1
@@ -200,8 +202,7 @@ speed:
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
 fly:
   # Enable this check?
-  # Warning: Speed check must
-  # also be enabled.
+  # Warning: Speed check must also be enabled.
   enable: true
 
   # Violations needed to cancel illegal movements (-1 = never cancel)
@@ -356,6 +357,7 @@ block:
         limit: 1
         head: 5
         simple: 3
+        direction: 4
     # It can detect player towering up faster
     tower:
       enable: true
