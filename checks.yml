@@ -130,6 +130,11 @@ killaura:
       vl_weight_fast_attack: 10
       async: true
       real_entity_id: true
+      only_command_trigger: false
+      check_ticks:
+        base: 100
+        attack_add: 20
+        hit_bot_add: 50
       movement:
         distance_base: 3.0
         distance_random_size: 1.0
