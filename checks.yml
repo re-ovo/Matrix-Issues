@@ -123,6 +123,17 @@ killaura:
     fake_rotation:
       enable: true
       vl_weight: 8
+    # npc check
+    npc:
+      enable: true
+      vl_weight: 4
+      vl_weight_fast_attack: 10
+      async: true
+      real_entity_id: true
+      movement:
+        distance_base: 3.0
+        distance_random_size: 1.0
+        distance_attack_base: 2.0
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
