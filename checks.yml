@@ -131,6 +131,7 @@ killaura:
       async: true
       real_entity_id: true
       only_command_trigger: false
+      visible: true
       check_ticks:
         base: 100
         attack_add: 20
@@ -154,16 +155,8 @@ hitbox:
 
   # Direction check settings
   direction:
-    # HitBox compensation
-    # Smaller = More sensitive
-    compensation:
-      # Horizon hitBox compensation
-      xz: 0.8
-      # Vertical hitBox compensation
-      y: 0.4
-
     # Violation weight
-    vl_weight: 1
+    vl_weight: 2
 
   # Reach check settings
   reach:
