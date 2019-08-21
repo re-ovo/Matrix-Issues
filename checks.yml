@@ -193,6 +193,9 @@ speed:
   # Enable sprint direction check?
   sprint_direction: true
 
+  # Enable strafe check?
+  strafe: true
+
   # Enable FastClimb/FastLadder check?
   fastclimb: true
 
@@ -438,7 +441,7 @@ velocity:
   modules:
     vertical:
       enable: true
-      vl_weight: 1
+      vl_weight: 2
     horizon:
       enable: true
       vl_weight: 4
@@ -447,10 +450,10 @@ velocity:
       vl_weight: 2
     delay:
       enable: true
-      vl_weight: 1
+      vl_weight: 3
     expect:
       enable: true
-      vl_weight: 2
+      vl_weight: 3
     pattern:
       enable: true
       vl_weight: 7
