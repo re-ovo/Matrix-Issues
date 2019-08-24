@@ -32,7 +32,7 @@ killaura:
     # It uses machine learning algorithms to distinguish whether players cheat or not.
     machine_learning:
       enable: true
-      vl_weight: 15
+      vl_weight: 10
     # AutoClicker check
     # Detecting player using auto clicker software
     auto_clicker:
@@ -199,9 +199,12 @@ speed:
   # Enable FastClimb/FastLadder check?
   fastclimb: true
 
-  # Enable NoSlow check?
+  # NoSlow check setting
   # It can detect player moving faster when eating/sneaking/shooting bow
-  noslow: true
+  noslow:
+    enable: true
+    vl_weight: 4
+    cancel_vl: 15
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -441,7 +444,7 @@ velocity:
   modules:
     vertical:
       enable: true
-      vl_weight: 2
+      vl_weight: 4
     horizon:
       enable: true
       vl_weight: 4
@@ -449,9 +452,6 @@ velocity:
       enable: true
       vl_weight: 2
     delay:
-      enable: true
-      vl_weight: 3
-    expect:
       enable: true
       vl_weight: 3
     pattern:
