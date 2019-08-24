@@ -26,6 +26,13 @@ player_latency_protection:
   # Enable this feature?
   enable: true
 
+
+## Ghost Mode
+# If you enable Ghost Mode, Matrix will Not setback player
+# or cancel illegal actions. I don't recommend turning this feature on,
+# which can lead to bypasses, such as teleport
+ghost_mode: false
+
 ## Cloud Service
 # Matrix can connect to the cloud service and provide some
 # service for you, also, it's free!
