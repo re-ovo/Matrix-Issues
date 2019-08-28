@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: checks.yml  | last edit version: @2.2.0
+#             file: checks.yml | Customize each checks here
 #
 # Useful Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -140,6 +140,10 @@ killaura:
         distance_base: 3.0
         distance_random_size: 1.0
         distance_attack_base: 2.0
+    # Rotation check
+    rotation:
+      enable: true
+      vl_weight: 10
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -338,19 +342,13 @@ fastheal:
     20: 'matrix kick %player% FastHeal Hacks'
 
 ## Block
-# Check prevents the player from breaking, placing, or bridge/tower up quickly
+# Check prevents the player from breaking, placing block quickly
 block:
   # Enable this check?
   enable: true
 
   # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
-  cancel_vl: 15
-
-  # Scaffold drag back system
-  # It can drag player back instead of canceling placing the block if they are using scaffold cheat
-  drag_back:
-    enable: true
-    start_vl: 3
+  cancel_vl: 5
 
   # Modules List
   # You can turn off some modules here
@@ -363,6 +361,32 @@ block:
     fastplace:
       enable: true
       vl_weight: 1
+    # It can detect player placing block without swing hand
+    noswing:
+      enable: true
+      vl_weight: 1
+    # detect player not send abort breaking packet
+    abort:
+      enable: true
+      vl_weight: 0
+
+  # Violation Thresholds
+  # number_of_violations: '<command>'
+  commands:
+    10: 'matrix notify %player% tried to place/break a block too quickly (FastPlace/FastBreak)'
+    20: 'matrix kick %player% FastPlace/FastBreak Hacks'
+
+## Scaffold check
+# Check prevents player bridging blocks or towering up faster than normal speed
+scaffold:
+  # Enable this check
+  enable: true
+
+  # Cancel VL
+  cancel_vl: 15
+
+  # Modules
+  modules:
     # It can detect player bridging faster
     scaffold:
       enable: true
@@ -377,20 +401,13 @@ block:
     tower:
       enable: true
       vl_weight: 2
-    # It can detect player placing block without swing hand
-    noswing:
-      enable: true
-      vl_weight: 1
-    # detect player not send abort breaking packet
-    abort:
-      enable: true
-      vl_weight: 0
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    10: 'matrix notify %player% tried to place/break a block too quickly (FastPlace)'
-    20: 'matrix kick %player% FastPlace/FastBreak Hacks'
+    7: 'matrix notify %player% tried to bride blocks quickly (Scaffold)'
+    15: 'matrix notify %player% tried to bride blocks quickly (Scaffold) #2'
+    24: 'matrix kick %player% Scaffold/Tower'
 
 ## Jesus
 # Check prevents the player from moving too too quickly in liquids, or walking on liquid.
