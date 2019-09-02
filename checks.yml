@@ -227,6 +227,12 @@ fly:
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 50
 
+  # Fly ability check
+  # It might be not compatible with some plugins, test it by yourself
+  ability:
+    enable: true
+    vl_weight: 20
+
   # Strict Glide check
   strict_glide:
     # Enable strict glide check?
