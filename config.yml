@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: config.yml  | last edit version: @2.1.1
+#             file: config.yml  | Customize general settings here
 #
 # Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -35,10 +35,17 @@ ghost_mode: false
 
 ## Cloud Service
 # Matrix can connect to the cloud service and provide some
-# service for you, also, it's free!
+# service for you. You also can buy the premium user to gain
+# more checks and services
 cloud:
   # Enable Cloud Service ?
   enable: true
+
+  # Login user name
+  user: ''
+
+  # Login password
+  password: ''
 
 ## Server Lag Protection
 # Description: Automatically disables some checks when your
