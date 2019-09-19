@@ -21,113 +21,39 @@ killaura:
   # Enable KillAura check?
   enable: true
 
-  # Canceling system
-  # It can cancel attack damage when the player is considered to be cheating (-1 = never canceling)
-  # Note: Only some modules have canceling system, not all
-  cancel_vl: 3
+  # Violation Level Weights of each modules
+  # Set to -1 = disable that module.
+  # Note: some modules are only work for Premium
+  # Users, such as "pitch.T1" or aimassist check
+  vl_weights:
+    accuracy: 100
+    aimassist: 10
+    pitch: 5
+    post: 1
+    dead: 3
+    npc: 5
+    machine_learning: 10
+    noswing: 4
+    sprint: 5
+    super_kb: 20
+    autoclicker: 5
+    yaw: 5
+    angle: 8
 
-  # Module Settings
-  modules:
-    # Machine Learning KillAura check
-    # It uses machine learning algorithms to distinguish whether players cheat or not.
+  # Advanced Settings, you can customize some values for some
+  # checks here. If you don't know what is it, don't change
+  # anything!
+  settings:
+    # Settings for the AutoClicker check
+    autoclicker:
+      max_cps: 17
+
+    # Settings for the Machine Learning checks
     machine_learning:
-      enable: true
-      vl_weight: 10
-    # AutoClicker check
-    # Detecting player using auto clicker software
-    auto_clicker:
-      # clicks per second(CPS) check
-      cps:
-        enable: true
-        max_cps: 15
-        vl_weight: 4
-      # click delay check
-      delay:
-        enable: true
-        vl_weight: 3
-        # The min click delay differences player should have
-        # higher value = more sensitive, but I suggest you don't set it higher, because it will cause more false flags
-        delay_diff_threshold: 150
-      # packet auto clicker pattern, it can detect some external auto clicker software
-      packet:
-        enable: true
-        vl_weight: 5
-      # long-term-cps difference check
-      cps_long_term:
-        enable: true
-        vl_weight: 5
-    # Attack Accuracy check
-    # Preventing player from attacking other entities wit low miss rates
-    accuracy:
-      enable: true
-      vl_weight: 20
-      max_accuracy: 70
-    # Yaw Pattern
-    # Analysing the yaw movement when player fighting
-    yaw:
-      enable: true
-      vl_weight: 5
-    # Pitch Pattern
-    # Analysing the pitch movement when player fighting
-    pitch:
-      enable: true
-      vl_weight: 5
-    # Derp
-    # Preventing player's pitch value > 90 or pitch<-90
-    derp:
-      enable: true
-      vl_weight: 10
-    # Snap aiming
-    # Preventing player from aiming fast when fighting
-    snap_aim:
-      enable: true
-      vl_weight: 5
-    # Dead entities hitting
-    # Preventing player from attacking their target after he killed the target
-    dead:
-      enable: true
-      vl_weight: 3
-    # No swing
-    # Preventing player from attacking entities without arm swing
-    noswing:
-      enable: true
-      vl_weight: 2
-    # Simple packet pattern
-    # Preventing player from attacking others immediately after sending a flying packet
-    simple:
-      enable: true
-      vl_weight: 1
-    # Critical hit
-    # Preventing player from critical attacking other entities without correct jumping
-    critical:
-      enable: true
-      vl_weight: 4
-      cancel: true
-    # super knock back check
-    superkb:
-      enable: true
-      vl_weight: 5
-    # auto block
-    auto_block:
-      enable: true
-      vl_weight: 4
-    # combat style check
-    style:
-      enable: true
-      vl_weight: 10
-    # aim feature check
-    aim_feature:
-      enable: true
-      vl_weight: 5
-    # fake rotation
-    fake_rotation:
-      enable: true
-      vl_weight: 8
-    # npc check
+      # Format: - '#XXX'. For example: - '#66'
+      disable_patterns: {}
+    # Settings for the NPC/ForceField check
     npc:
-      enable: true
-      vl_weight: 4
-      vl_weight_fast_attack: 10
       async: true
       real_entity_id: true
       only_command_trigger: false
@@ -137,13 +63,9 @@ killaura:
         attack_add: 20
         hit_bot_add: 50
       movement:
-        distance_base: 3.0
-        distance_random_size: 1.0
-        distance_attack_base: 2.0
-    # Rotation check
-    rotation:
-      enable: true
-      vl_weight: 10
+        distance_base: 3.2
+        distance_random_size: 0.75
+        distance_attack_base: 3.0
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
