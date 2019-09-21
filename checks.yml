@@ -39,6 +39,7 @@ killaura:
     autoclicker: 5
     yaw: 5
     angle: 8
+    style: 10
 
   # Advanced Settings, you can customize some values for some
   # checks here. If you don't know what is it, don't change
