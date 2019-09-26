@@ -76,28 +76,32 @@ killaura:
 
 ## HitBox
 # Description: This check prevents players from using HitBox, Angle, Reach hacks.
+# Note: This check is strict ONLY when you attack other PLAYERS, but it's very loose
+# when you attack non-player creatures. So, if you find that you can use HixBox
+# hack on non-player creatures, it's very normal, don't report it.
 hitbox:
   # Enable HitBox check?
   enable: true
 
-  # Direction check settings
-  direction:
-    # Violation weight
-    vl_weight: 2
+  # Player HitBox Size
+  hitbox:
+    width: 0.45
+    height: 2.0
 
-  # Reach check settings
-  reach:
-    # Maximum attack reach distance
-    max_reach: 3.1
+  # Maximum reach distance
+  max_reach: 3.2
 
-    # How much lenient should be when a player is moving
-    # Higher = More lenient for moving players
-    # Suggest Value: 1.0 ~ 1.5
-    # Reach tolerance value = move_dist * lag_tick * move_lenient
-    move_lenient: 1.1
+  # Force cancellation attack distance
+  # Don't set it lower than 6.0 if your server has Combo Hit mode!
+  force_cancel_distance: 6.0
+
+  # Violation Weight
+  vl_weight:
+    reach: 3
+    direction: 4
 
   # Violations needed to cancel illegal hits (-1 = never cancel)
-  cancel_vl: 4
+  cancel_vl: 6
 
   # Violation Thresholds
   # number_of_violations: '<command>'
