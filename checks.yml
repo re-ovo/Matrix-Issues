@@ -40,6 +40,7 @@ killaura:
     yaw: 5
     angle: 8
     style: 10
+    critical: 5
 
   # Advanced Settings, you can customize some values for some
   # checks here. If you don't know what is it, don't change
@@ -370,6 +371,11 @@ inventory:
   # Enable ChestStealer check?
   # It can detect player taking items out of chest faster
   chest_stealer: true
+
+  # Ignore items/inventory which has colorful name
+  # This feature can prevent false positive when you
+  # click some GUI such as the Bedwars Shop
+  ignore_color: false
 
   # Disable InventoryMove check
   # If you don't need InventoryMove check, you can set this to 'true' to disable it
