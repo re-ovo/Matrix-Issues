@@ -26,6 +26,10 @@ player_latency_protection:
   # Enable this feature?
   enable: true
 
+## Kick Lighting Effect
+# Should there be a lightning bolt visual effect if
+# someone is getting kicked using /matrix kick
+kick_strike_lightning: true
 
 ## Ghost Mode
 # If you enable Ghost Mode, Matrix will Not setback player
