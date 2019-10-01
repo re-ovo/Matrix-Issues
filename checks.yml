@@ -131,13 +131,6 @@ speed:
   # Enable FastClimb/FastLadder check?
   fastclimb: true
 
-  # NoSlow check setting
-  # It can detect player moving faster when eating/sneaking/shooting bow
-  noslow:
-    enable: true
-    vl_weight: 4
-    cancel_vl: 15
-
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
