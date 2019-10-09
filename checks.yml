@@ -36,20 +36,43 @@ killaura:
     noswing: 4
     sprint: 5
     super_kb: 20
-    autoclicker: 5
     yaw: 5
     angle: 8
     style: 10
     critical: 5
 
+  # Combined check settings
+  # This check can combine all killaura & hitbox checks to
+  # determine if the player is cheating. Note: This check
+  # only work for premium users
+  combine:
+    enable: true
+    vl_weights:
+      P1: 40
+      P2: 30
+      P3: 15
+      P4: 15
+      P5: 35
+      P6: 50
+      P7: 15
+      P8: 20
+      P9: 20
+
+  # Autoclicker check setting
+  # Prevent player use AutoClicker cheat
+  autoclicker:
+    max_cps: 24 # Player can click 24 times per second if they jitter clicking
+    vl_weights:
+      cps: 5
+      fly: 5 # This module might cause some false flags when player clicking fast, you can disable it if you want (-1)
+      delay: 5 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
+      cps_long: 5
+      external: 10
+
   # Advanced Settings, you can customize some values for some
   # checks here. If you don't know what is it, don't change
   # anything!
   settings:
-    # Settings for the AutoClicker check
-    autoclicker:
-      max_cps: 17
-
     # Settings for the Machine Learning checks
     machine_learning:
       # Format: - '#XXX'. For example: - '#66'
