@@ -64,7 +64,6 @@ killaura:
     max_cps: 24 # Player can click 24 times per second if they jitter clicking
     vl_weights:
       cps: 5
-      fly: 5 # This module might cause some false flags when player clicking fast, you can disable it if you want (-1)
       delay: 5 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
       cps_long: 5
       external: 10
