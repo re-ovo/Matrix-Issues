@@ -51,6 +51,11 @@ cloud:
   # Login password
   password: ''
 
+  # Auto close cloud service after verified premium user
+  # If you don't need cloud service and you still need
+  # verify premium user, you can set this to true
+  auto_close_after_verified: false
+
 ## Server Lag Protection
 # Description: Automatically disables some checks when your
 # server is lagging. This prevents most, but not all, false
