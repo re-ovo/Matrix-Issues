@@ -409,32 +409,30 @@ velocity:
   # Enable this check?
   enable: true
 
-  # Modules List
-  # You can turn off some velocity modules here
-  # Set it to false to disable the module
-  modules:
-    vertical:
-      enable: true
-      vl_weight: 4
-    horizon:
-      enable: true
-      vl_weight: 4
-    air:
-      enable: true
-      vl_weight: 2
-    delay:
-      enable: true
-      vl_weight: 3
-    pattern:
-      enable: true
-      vl_weight: 7
+  # The time to wait for players to respond to velocity (ticks)
+  # If the player does not respond to velocity after that
+  # time, the player will be detected.
+  wait_time: 20
+
+  # Ignore lag player, this feature can ignore the player who
+  # is lagging or changing resource pack.
+  ignore_lag: true
+
+  # Violation Weights
+  # -1 = disable that module
+  vl_weights:
+    P1: 10
+    P2: 5
+    P3: 7
+    P4: 4
+    P5: 4
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    10: 'matrix notify %player% tried to ignore server velocity (Anti-Knockback)'
-    15: 'matrix notify %player% tried to ignore server velocity (Anti-Knockback) #2'
-    20: 'matrix kick %player% Velocity/Anti-Knockback Hacks'
+    10: 'matrix notify %player% tried to ignore server velocity (Velocity)'
+    15: 'matrix notify %player% tried to ignore server velocity (Velocity) #2'
+    20: 'matrix kick %player% Velocity/Anti-Knockback'
 
 ## Spam
 # Check prevents a player from spamming messages in the servers chat.
