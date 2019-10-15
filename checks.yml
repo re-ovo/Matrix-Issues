@@ -90,6 +90,7 @@ killaura:
         distance_base: 3.2
         distance_random_size: 0.75
         distance_attack_base: 3.0
+        move_up_after_attack: false
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -209,28 +210,23 @@ badpackets:
   # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal movement packets (-1 = never cancel)
-  cancel_vl: 30
+  # Buffer Size (ticks)
+  # The larger the value, the slower the detection, but the more stable
+  # Don't set it lower than 5
+  buffer_size: 7
 
-  # packet queue size (seconds)
-  # smaller-> detect timer faster, higher -> more friendly for high latency players
-  cache_size: 30
+  # Freeze time (millisecond, 1second=1000 millisecond)
+  # The time to freeze player if they try to send too
+  # many moving packets at the same time
+  freeze_time: 500
 
-  # Tick Rate check
-  # It can detect some smooth Timer (1.01~1.05 timer fast)
-  tick_rate:
-    # Enable this check?
-    enable: true
+  # How many extra packets can the player send?
+  max_extra_packets: 15
 
-    # Cache size (Seconds)
-    # Bigger: Less false positives for laggy players
-    # Smaller: More strict, detect Timer hack fast
-    cache_size: 5
-
-  # Useless verbose message output (+0 VL messages)
-  # If you don't want to see BadPackets spam in the verbose messages
-  # You can set this to false
-  verbose_useless: true
+  # Violation weight
+  vl_weights:
+    limit: 10
+    timer: 4
 
   # Violation Thresholds
   # number_of_violations: '<command>'
