@@ -212,8 +212,8 @@ badpackets:
 
   # Buffer Size (ticks)
   # The larger the value, the slower the detection, but the more stable
-  # Don't set it lower than 5
-  buffer_size: 7
+  # Don't set it lower than 10
+  buffer_size: 20
 
   # Freeze time (millisecond, 1second=1000 millisecond)
   # The time to freeze player if they try to send too
@@ -226,7 +226,7 @@ badpackets:
   # Violation weight
   vl_weights:
     limit: 10
-    timer: 4
+    timer: 10
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -306,6 +306,7 @@ block:
     fastplace:
       enable: true
       vl_weight: 1
+      max_place_per_second: 9
     # It can detect player placing block without swing hand
     noswing:
       enable: true
