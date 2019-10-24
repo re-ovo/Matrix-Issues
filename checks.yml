@@ -425,6 +425,7 @@ velocity:
     P5: 4
     P6: 2
     P7: 3
+    P8: 2
 
   # Violation Thresholds
   # number_of_violations: '<command>'
