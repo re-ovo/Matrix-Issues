@@ -26,6 +26,10 @@ player_latency_protection:
   # Enable this feature?
   enable: true
 
+## Permission Cache refresh interval (seconds)
+# default: 15 seconds
+permission_refresh_interval: 15
+
 ## Kick Lighting Effect
 # Should there be a lightning bolt visual effect if
 # someone is getting kicked using /matrix kick
