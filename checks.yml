@@ -579,28 +579,3 @@ vehicle:
     5: 'matrix notify %player% suspected using vehicle cheat (Vehicle)'
     10: 'matrix notify %player% suspected using vehicle cheat (Vehicle) #2'
     17: 'matrix kick %player% Suspicious vehicle movement'
-
-## XRay
-# Prevents player using XRay hacks by analysing player's behavior
-# (not analyse/limit the ore amount)
-# It might cause server lag if your server have many players
-xray:
-  # Enable this check?
-  enable: true
-
-  # Credibility threshold
-  credibility_threshold: 80.0
-
-  # Credibility cache size
-  # Larger size -> detect slower, but less false positives
-  cache_size: 2
-
-  # Violation Weight
-  vl_weight: 5
-
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    5: 'matrix notify %player% suspected using X-Ray'
-    10: 'matrix notify %player% suspected using X-Ray #2'
-    15: 'matrix kick %player% X-Ray'
