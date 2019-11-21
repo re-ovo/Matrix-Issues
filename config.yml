@@ -100,3 +100,6 @@ relog_time: 5
 # be disabled
 disabled_components:
   - 'example entry'
+
+## Hide prefix in the kick messages
+hide_prefix_in_kick: false
