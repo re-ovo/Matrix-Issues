@@ -76,6 +76,14 @@ killaura:
     machine_learning:
       # Format: - '#XXX'. For example: - '#66'
       disable_patterns: {}
+      # The duration of data collection, the longer the time, the slower the detection, but the more accurate (unit: milliseconds, default: 7000)
+      collect_data_duration: 7000
+      # Data set availability threshold, if the collected data set is below
+      # the threshold, discard the data set without analysis
+      availability_threshold:
+        hits: 3 # In the dataset, the player must attack the entity 3 times.
+        clicks: 30  # In the dataset, the player must click the mouse 30 times
+        rotations: 90 # In the dataset, the player must rotate the head 90 times
     # Settings for the NPC/ForceField check
     npc:
       async: true
