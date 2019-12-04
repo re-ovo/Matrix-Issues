@@ -1,6 +1,6 @@
 #### MATRIX CONFIG FILE
 #                         MATRIX ANTI CHEAT
-#             file: language.yml  | last edit version: @2.0.4
+#             file: language.yml  | Customize plugin languages here
 #
 # Links:
 #   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
@@ -37,3 +37,13 @@ verbose-format: '&7%player% failed &2%check% &7check &8| &7%message% &b(+%add_vl
 
 ## Relog message
 relog-message: 'Please wait a few seconds before logging back in!'
+
+## Commands description
+commands:
+  verbose: 'Show/Hide Matrix verbose messages'
+  notify: 'Send message to all online staff'
+  npc: 'Spawn an KillAura detection NPC behind player'
+  kick: 'Kick a player'
+  msg: 'Send warning messages to a player'
+  gui: 'Open Control Panel'
+  reload: 'Reload Config'
