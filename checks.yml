@@ -40,6 +40,7 @@ killaura:
     angle: 8
     style: 10
     critical: 5
+    clickaimbot: 5
 
   # Combined check settings
   # This check can combine all killaura & hitbox checks to
