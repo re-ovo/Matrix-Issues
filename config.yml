@@ -71,6 +71,10 @@ tps_protection:
   # Minimum TPS needed to trigger protection
   min_tps: 17.0
 
+  # Lag spike threshold (millisecond)
+  # If the server does not respond for a certain period of time, then close the check
+  lag_threshold: 155
+
 ## Log Violations
 # Description: Logs all violations to a file. Files can be
 # found in /plugins/Matrix/logs
