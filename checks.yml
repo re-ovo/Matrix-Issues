@@ -89,7 +89,7 @@ killaura:
     npc:
       async: true
       real_entity_id: true
-      only_command_trigger: false
+      only_command_trigger: true
       visible: true
       check_ticks:
         base: 100
@@ -103,6 +103,7 @@ killaura:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
+    5: 'matrix npc %player% 100'
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
     45: 'matrix kick %player% KillAura'
