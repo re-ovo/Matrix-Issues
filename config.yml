@@ -41,24 +41,16 @@ kick_strike_lightning: true
 # which can lead to bypasses, such as teleport
 ghost_mode: false
 
-## Cloud Service
-# Matrix can connect to the cloud service and provide some
-# service for you. You also can buy the premium user to gain
-# more checks and services
-cloud:
-  # Enable Cloud Service ?
-  enable: true
-
+## Premium User
+# This is an authentication system that provides better service to paying users.
+# If you are premium user, you will get more additional KillAura checks
+# You can learn more on our Discord server
+premium_user:
   # Login user name
   user: ''
 
   # Login password
   password: ''
-
-  # Auto close cloud service after verified premium user
-  # If you don't need cloud service and you still need
-  # verify premium user, you can set this to true
-  auto_close_after_verified: false
 
 ## Server Lag Protection
 # Description: Automatically disables some checks when your
