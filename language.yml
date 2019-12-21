@@ -46,4 +46,5 @@ commands:
   kick: 'Kick a player'
   msg: 'Send warning messages to a player'
   gui: 'Open Control Panel'
+  violations: 'Open Violations GUI'
   reload: 'Reload Config'
