@@ -15,36 +15,44 @@
 #
 # Thanks for using Matrix! <3
 
-## Check update when starting up?
+# Check update when starting up?
 check_update: true
 
-## Player Latency Protection
-# Description: Increases the amount of violations needed to
-# trigger the Punish Commands (checks.yml) for players with
-# high latency. Good for servers with less RAM.
+# Player Latency Protection
+# Reduce the VL value triggered by high-latency players, making them less likely to be kicked out
 player_latency_protection:
   # Enable this feature?
   enable: true
 
-## Permission Cache refresh interval (seconds)
-# default: 15 seconds
+## Load the configuration file from Http(s) server (Only "checks.yml"!)
+# Some large servers have dozens or even hundreds of sub-servers, so updating configuration
+# files is very troublesome for them. This feature can help Matrix directly load configuration
+# files from a central address.
+cloud_config:
+  # Enable this feature? (default: false)
+  enable: false
+
+  # you can add multiple links here, it can avoid losing configuration files due to a link going offline
+  # If all links going offline, Matrix will use the default configuration
+  links:
+    - 'your configuration file link'
+
+# Permission Cache refresh interval (unit: seconds, default: 15)
 permission_refresh_interval: 15
 
-## Kick Lighting Effect
-# Should there be a lightning bolt visual effect if
-# someone is getting kicked using /matrix kick
+# Kick Lighting Effect
+# Should there be a lightning bolt visual effect if someone is getting kicked using /matrix kick
 kick_strike_lightning: true
 
-## Ghost Mode
-# If you enable Ghost Mode, Matrix will Not setback player
-# or cancel illegal actions. I don't recommend turning this feature on,
-# which can lead to bypasses, such as teleport
+# Ghost Mode
+# If you enable Ghost Mode, Matrix will Not setback player or cancel illegal actions.
+# I don't recommend turning this feature on, which can lead to bypasses, such as teleport
 ghost_mode: false
 
-## Premium User
+# Premium User
 # This is an authentication system that provides better service to paying users.
 # If you are premium user, you will get more additional KillAura checks
-# You can learn more on our Discord server
+# You can learn more on our Discord server!
 premium_user:
   # Login user name
   user: ''
@@ -52,10 +60,9 @@ premium_user:
   # Login password
   password: ''
 
-## Server Lag Protection
-# Description: Automatically disables some checks when your
-# server is lagging. This prevents most, but not all, false
-# positives from occuring.
+# Server Lag Protection
+# Automatically disables some checks when your server is lagging. This prevents
+# most, but not all, false positives from occuring.
 tps_protection:
   # Enable this feature?
   enable: true
@@ -67,20 +74,18 @@ tps_protection:
   # If the server does not respond for a certain period of time, then close the check
   lag_threshold: 155
 
-## Log Violations
-# Description: Logs all violations to a file. Files can be
-# found in /plugins/Matrix/logs
+# Log Violations (default: true)
+# Logs all violations to a file. Files can be found in /plugins/Matrix/logs
 # Warning: If you are using BungeeCord, I recommend setting
 # this to FALSE. This will prevent useless log files from
 # being stored and using up precious disk space.
 log_file: true
 
-## Deny Bypass Permission
-# Description: By setting this option to TRUE, you are
-# forcing Matrix to check everyone on the server, INCLUDING
-# anyone who has Operator status. By setting this option to
-# TRUE you can run the necessary tests without having to
-# remove your operator status.
+# Deny Bypass Permission (default: false)
+# By setting this option to TRUE, you are forcing Matrix to check everyone
+# on the server, INCLUDING anyone who has Operator status. By setting this
+# option to TRUE you can run the necessary tests without having to remove
+# your operator status.
 disable_bypass_permission: false
 
 ## Relog time
@@ -88,14 +93,13 @@ disable_bypass_permission: false
 # also, you can set -1 to disable this feature
 relog_time: 5
 
-## Disabled components
-# You can disable a specific sub check here, instead of disabling
-# the whole check, you can find component name in the end of verbose
-# messages
+# Disabled components
+# You can disable a specific sub check here, instead of disabling the whole
+# check, you can find component name in the end of verbose messages
 # Example: If you add "speed.web" in the blow, the fast web check will
 # be disabled
 disabled_components:
   - 'example entry'
 
-## Hide prefix in the kick messages
+# Hide prefix in the kick messages (default: false)
 hide_prefix_in_kick: false
