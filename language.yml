@@ -47,4 +47,6 @@ commands:
   msg: 'Send warning messages to a player'
   gui: 'Open Control Panel'
   violations: 'Open Violations GUI'
+  ping: 'Get the player latency value'
+  cps: 'Monitor player CPS data for seconds'
   reload: 'Reload Config'
