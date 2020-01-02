@@ -187,15 +187,6 @@ fly:
     enable: true
     vl_weight: 20
 
-  # Strict Glide check
-  strict_glide:
-    # Enable strict glide check?
-    enable: true
-
-    # Falling distance and expectation deserve maximum deviation
-    # If difference lager than this value, the player will be flagged
-    max_diff: 0.5
-
   # NoFall check
   nofall:
     # Force deal damage after setback?
@@ -404,6 +395,9 @@ inventory:
   # This option ONLY works for 1.12/1.13/+ server
   disable_invmove: false
 
+  # Check AutoTotem cheat?
+  auto_totem: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -499,7 +493,7 @@ autofish:
   # number_of_violations: '<command>'
   commands:
     6: 'matrix notify %player% is using auto fish (AutoFish)'
-    15: 'matrix kick %player% No Auto Fishing!'
+    10: 'matrix kick %player% No Auto Fishing!'
 
 ## Phase
 # Check prevents the player people glitching through blocks.
