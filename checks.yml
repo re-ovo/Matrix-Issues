@@ -152,6 +152,9 @@ speed:
   # flight detection.
   enable: true
 
+  # Speed prediction tolerance
+  tolerance: 0.01
+
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 30
 
