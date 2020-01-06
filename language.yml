@@ -36,7 +36,7 @@ spam-warning: 'You can''t chat that fast or send the same content over again!'
 verbose-format: '&7%player% failed &2%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps% component: %component%'
 
 ## Relog message
-relog-message: 'Please wait a few seconds before logging back in!'
+relog-message: 'Please wait %time_left% seconds before logging back in!'
 
 ## Commands description
 commands:
