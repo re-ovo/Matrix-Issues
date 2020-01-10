@@ -41,6 +41,7 @@ killaura:
     style: 10
     critical: 5
     clickaimbot: 5
+    multi: 5
 
   # Combined check settings
   # This check can combine all killaura & hitbox checks to
@@ -194,6 +195,9 @@ fly:
   nofall:
     # Force deal damage after setback?
     damage: true
+
+  # Trident Boost violation level weight
+  trident_boost_vl_weight: 20
 
   # Setback method (back/ground)
   # back: teleport the player to the last legit location
@@ -491,6 +495,9 @@ interact:
 autofish:
   # Enable this check?
   enable: true
+
+  # Violations needed to cancel auto fishing (-1 = never cancel)
+  cancel_vl: 5
 
   # Violation Thresholds
   # number_of_violations: '<command>'
