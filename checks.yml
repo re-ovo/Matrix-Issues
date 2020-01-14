@@ -42,6 +42,7 @@ killaura:
     critical: 5
     clickaimbot: 5
     multi: 5
+    click: 35
 
   # Combined check settings
   # This check can combine all killaura & hitbox checks to
@@ -74,6 +75,14 @@ killaura:
   # checks here. If you don't know what is it, don't change
   # anything!
   settings:
+    # Settings for the click check
+    click:
+      # You can customize the sensitivity of click Check, which is divided into three levels (0, 1, 2)
+      # 0: It can detect many types of KillAura, but there are many false alarms. It is generally not recommended to use it
+      # 1: Medium sensitivity, with a small number of false positives, it can detect most types of killaura
+      # 2: The most lenient mode can detect most types of killaura, but it is slow
+      sensitivity: 2
+
     # Settings for the Machine Learning checks
     machine_learning:
       # Format: - '#XXX'. For example: - '#66'
