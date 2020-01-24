@@ -101,5 +101,9 @@ relog_time: 5
 disabled_components:
   - 'example entry'
 
+# Custom VL Weight (Format: component: new vl weight)
+custom_vl_weight:
+  - 'example_component:5'
+
 # Hide prefix in the kick messages (default: false)
 hide_prefix_in_kick: false
