@@ -176,6 +176,7 @@ speed:
   # number_of_violations: '<command>'
   commands:
     55: 'matrix notify %player% tried to move faster than usual (Speed) #1'
+    60: 'matrix msg %player% You were detected to move too fast, please sneak and block now to prevent false positives!'
     90: 'matrix notify %player% tried to move faster than usual (Speed) #2'
     220: 'matrix kick %player% Speed Hacks'
 
