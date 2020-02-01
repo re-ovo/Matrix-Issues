@@ -516,15 +516,18 @@ phase:
   # Enable this check?
   enable: true
 
-  # Detection tolerance (smaller = stricter)
-  tolerance: 0.01
+  # How much time should Matrix prevent the player from moving if
+  # the player frequently tries to move the block? (milliseconds)
+  freeze_time: 500
+
+  # Violations needed to cancel illegal movements
+  cancel_vl: 5
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    5: 'matrix notify %player% is phase into block (Phase)'
-    10: 'matrix notify %player% is phase into block (Phase) #2'
-    13: 'matrix kick %player% Phase/NoClip'
+    7: 'matrix notify %player% is phase into block (Phase)'
+    13: 'matrix notify %player% is phase into block (Phase) #2'
 
 ## AutoBot
 # Check prevents player use some Bot mods like Baritone
