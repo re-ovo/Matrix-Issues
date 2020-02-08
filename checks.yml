@@ -176,7 +176,6 @@ speed:
   # number_of_violations: '<command>'
   commands:
     55: 'matrix notify %player% tried to move faster than usual (Speed) #1'
-    60: 'matrix msg %player% You were detected to move too fast, please sneak and block now to prevent false positives!'
     90: 'matrix notify %player% tried to move faster than usual (Speed) #2'
     220: 'matrix kick %player% Speed Hacks'
 
@@ -195,6 +194,18 @@ fly:
   ability:
     enable: true
     vl_weight: 20
+
+  # If the player is very close to the void, should Matrix teleport
+  # it to the void after detecting that player is cheating? (default: true)
+  # If you disable this, it might cause some NoFall / BugUp bypass, but
+  # it's a nice option for skyblock server if you don't want your players
+  # get teleport into the void
+  setback_to_void: true
+
+  # Check ground spoof asynchronously? (default: true)
+  # Since ground spoof check requires complex collision box detection, this will affect server
+  # performance, making it asynchronous can solve this problem
+  async_ground_spoof_check: true
 
   # NoFall check
   nofall:
@@ -516,6 +527,11 @@ phase:
   # Enable this check?
   enable: true
 
+  # Check players asynchronously (default: true)
+  # Since Phase check requires complex collision box detection, this will affect server
+  # performance, making it asynchronous can solve this problem
+  async: true
+
   # How much time should Matrix prevent the player from moving if
   # the player frequently tries to move the block? (milliseconds)
   freeze_time: 500
@@ -531,6 +547,7 @@ phase:
 
 ## AutoBot
 # Check prevents player use some Bot mods like Baritone
+# NOTE: THIS CHECK IS ONLY WORK FOR PREMIUM USERS
 autobot:
   # Enable this check?
   enable: true
@@ -548,6 +565,10 @@ autobot:
 elytra:
   # Enable this check?
   enable: true
+
+  # Should Matrix be forced to pull back players who are particularly
+  # cheating? Even if they do not reach cancel_vl (default: true)
+  force_setback: true
 
   # Setback violation level (-1 = never setback)
   setback_vl: 5
