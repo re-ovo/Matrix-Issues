@@ -135,6 +135,12 @@ hitbox:
   # My suggestion is 3 to 7, please don't make it more than 7, because it is useless
   trace_back_length: 3
 
+  # How much should Matrix ignore players with greater network latency?
+  # When the player's network latency is greater than this value, some
+  # HitBox checks will stop working to prevent false positives. You can
+  # set this value to -1 to disable this feature. (default: 250)
+  max_ping: 250
+
   # Violation weights
   vl_weights:
     miss_player_hitbox: 2
