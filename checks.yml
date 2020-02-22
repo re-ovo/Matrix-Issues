@@ -64,7 +64,10 @@ killaura:
   # Autoclicker check setting
   # Prevent player use AutoClicker cheat
   autoclicker:
-    max_cps: 24 # Player can click 24 times per second if they jitter clicking
+    # Player can click 24 times per second if they jitter clicking
+    max_cps: 24
+    # If you enable this option, auto clicker check will not working when you attacking Mobs
+    not_check_attacking_mobs: false
     vl_weights:
       cps: 5
       delay: 5 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
