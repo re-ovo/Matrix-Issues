@@ -133,10 +133,10 @@ hitbox:
   # Maximum reach distance (default: 3.1)
   max_reach: 3.1
 
-  # How many moves should the Matrix trace back to the player? (default: 3)
+  # How many moves should the Matrix trace back to the player? (default: 5)
   # You can set this higher to reduce false positives, but this will weaken HitBox detection
-  # My suggestion is 3 to 7, please don't make it more than 7, because it is useless
-  trace_back_length: 3
+  # My suggestion is 3 to 10, please don't make it more than 10, because it is useless
+  trace_back_length: 5
 
   # How much should Matrix ignore players with greater network latency?
   # When the player's network latency is greater than this value, some
@@ -384,8 +384,8 @@ scaffold:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    7: 'matrix notify %player% tried to bride blocks quickly (Scaffold)'
-    15: 'matrix notify %player% tried to bride blocks quickly (Scaffold) #2'
+    7: 'matrix notify %player% tried to bridge blocks quickly (Scaffold)'
+    15: 'matrix notify %player% tried to bridge blocks quickly (Scaffold) #2'
     24: 'matrix kick %player% Scaffold/Tower'
 
 ## Jesus
