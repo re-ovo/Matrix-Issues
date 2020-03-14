@@ -211,11 +211,6 @@ fly:
   # get teleport into the void
   setback_to_void: true
 
-  # Check ground spoof asynchronously? (default: true)
-  # Since ground spoof check requires complex collision box detection, this will affect server
-  # performance, making it asynchronous can solve this problem
-  async_ground_spoof_check: true
-
   # NoFall check
   nofall:
     # Force deal damage after setback?
@@ -535,11 +530,6 @@ autofish:
 phase:
   # Enable this check?
   enable: true
-
-  # Check players asynchronously (default: true)
-  # Since Phase check requires complex collision box detection, this will affect server
-  # performance, making it asynchronous can solve this problem
-  async: true
 
   # How much time should Matrix prevent the player from moving if
   # the player frequently tries to move the block? (milliseconds)
