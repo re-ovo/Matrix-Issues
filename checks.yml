@@ -181,6 +181,9 @@ speed:
   # Enable FastClimb/FastLadder check?
   fastclimb: true
 
+  # Should Matrix check NoSlowDown cheat?
+  check_noslow: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
