@@ -1,9 +1,9 @@
 # Matrix-Issues
 Matrix Issue Tracker
 
-Buy: https://www.mc-market.org/resources/13999/
-Free: https://discord.gg/pEvY55J
-Website: https://matrix.rip
+Buy: https://www.mc-market.org/resources/13999/  
+Free: https://discord.gg/pEvY55J  
+Website: https://matrix.rip  
 
 To report an issue, click **Issues** at the top, and then click **New issue.**
 
