@@ -1,7 +1,9 @@
 # Matrix-Issues
 Matrix Issue Tracker
 
-https://www.spigotmc.org/resources/matrix-anticheat-hack-killaura-blocker-machine-learning-1-8-1-12-1-13.64635/
+Buy: https://www.mc-market.org/resources/13999/
+Free: https://discord.gg/pEvY55J
+Website: https://matrix.rip
 
 To report an issue, click **Issues** at the top, and then click **New issue.**
 
