@@ -81,6 +81,11 @@ tps_protection:
 # being stored and using up precious disk space.
 log_file: true
 
+# Delete outdated log files (days)
+# If the log file is stored for more than the specified number of days, the log file will be deleted
+# You can set it to `-1` to disable this feature
+delete_time: 30
+
 # Deny Bypass Permission (default: false)
 # By setting this option to TRUE, you are forcing Matrix to check everyone
 # on the server, INCLUDING anyone who has Operator status. By setting this
