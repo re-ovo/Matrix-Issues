@@ -42,6 +42,7 @@ relog-message: 'Please wait %time_left% seconds before logging back in!'
 commands:
   verbose: 'Show/Hide Matrix verbose messages'
   notify: 'Send message to all online staff'
+  toggle-notify: 'Toggle notify message output'
   npc: 'Spawn an KillAura detection NPC behind player'
   kick: 'Kick a player'
   msg: 'Send warning messages to a player'
