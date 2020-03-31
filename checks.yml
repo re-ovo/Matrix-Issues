@@ -29,7 +29,7 @@ killaura:
       enable: true
 
       # How much VL should the player get after being flagged by this module?
-      vl_weight: 5
+      vl_weight: 4
 
       # Do you want to disable the Packet Order check as it may cause false positives when players have high latency
       disable_packet_order_check: false
@@ -48,10 +48,10 @@ killaura:
 
       # How much VL should the player get after being flagged by this module?
       vl_weights:
-        cps: 5
-        delay: 5 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
-        cps_long: 5
-        v19plus: 5
+        cps: 7
+        delay: 4 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
+        cps_long: 6
+        v19plus: 6
 
     # click accuracy check
     click:
@@ -59,7 +59,7 @@ killaura:
       enable: true
 
       # How much VL should the player get after being flagged by this module?
-      vl_weight: 35
+      vl_weight: 30
 
       # You can customize the sensitivity of click Check, which is divided into three levels (0, 1, 2)
       # 0: It can detect many types of KillAura, but there are many false alarms. It is generally not recommended to use it
@@ -176,7 +176,7 @@ killaura:
       enable: true
 
       # How much VL should the player get after being flagged by this module?
-      vl_weight: 10
+      vl_weight: 15
 
     # Direction check, detect if aiming in player battle is normal based on motion prediction
     direction:
@@ -184,12 +184,12 @@ killaura:
       enable: true
 
       # How much VL should the player get after being flagged by this module?
-      vl_weight: 5
+      vl_weight: 3
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    5: 'matrix npc %player% 100'
+    10: 'matrix npc %player% 100'
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
     45: 'matrix kick %player% KillAura'
@@ -476,8 +476,9 @@ jesus:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    15: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
-    25: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    20: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
+    40: 'matrix notify %player% tried to move illegally in liquid (Jesus) #2'
+    50: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
 
 ## Inventory
 # Check prevents the player from using illegal inventory modifications such as Steal.
@@ -604,7 +605,7 @@ autofish:
   # number_of_violations: '<command>'
   commands:
     6: 'matrix notify %player% is using auto fish (AutoFish)'
-    10: 'matrix kick %player% No Auto Fishing!'
+    14: 'matrix kick %player% No Auto Fishing!'
 
 ## Phase
 # Check prevents the player people glitching through blocks.
@@ -614,7 +615,7 @@ phase:
 
   # How much time should Matrix prevent the player from moving if
   # the player frequently tries to move the block? (milliseconds)
-  freeze_time: 500
+  freeze_time: 400
 
   # Violations needed to cancel illegal movements
   cancel_vl: 5
