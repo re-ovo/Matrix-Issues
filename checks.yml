@@ -224,6 +224,15 @@ hitbox:
     reach_target_moving: 3
     reach_simple: 3
 
+  # Should dynamic VL weight be enabled?
+  # If enabled, the VL weight will be calculated based on the player's reach
+  # For example, players get 1vl when using 3.2 reach, and 19vl when players use 5.0 reach
+  # If this function is enabled, then "reach_target_standing" and "reach_target_moving" will no longer take effect
+  # Note: dynamic VL = (current_reach - max_reach) * expander
+  dynamic_vl:
+    enable: true
+    expander: 10
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
