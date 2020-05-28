@@ -634,6 +634,9 @@ phase:
   # Violations needed to cancel illegal movements
   cancel_vl: 5
 
+  # Should Matrix prevent players from using Ender Pearl for close range teleportation?
+  prevent_close_range_enderpearl: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
