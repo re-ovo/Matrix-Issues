@@ -72,7 +72,7 @@ tps_protection:
 
   # Lag spike threshold (millisecond)
   # If the server does not respond for a certain period of time, then close the check
-  lag_threshold: 155
+  lag_threshold: 1000
 
 # Log Violations (default: true)
 # Logs all violations to a file. Files can be found in /plugins/Matrix/logs
