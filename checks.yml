@@ -239,6 +239,7 @@ hitbox:
   # number_of_violations: '<command>'
   commands:
     10: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox)'
+    12: 'matrix npc %player% 120'
     15: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox) #2'
     24: 'matrix kick %player% Reach/HitBox Hacks'
 
@@ -365,7 +366,7 @@ fastuse:
   enable: true
 
   # Violations needed to cancel illegal item use (-1 = never cancel)
-  cancel_vl: 5
+  cancel_vl: 1
 
   # Violation weight
   vl_weight: 1
