@@ -194,13 +194,21 @@ killaura:
       # How much VL should the player get after being flagged by this module?
       vl_weight: 3
 
+    # Smooth check, Check if the player's aim is smooth
+    smooth:
+      # Enable this check?
+      enable: true
+
+      # How much VL should the player get after being flagged by this module?
+      vl_weight: 15
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     10: 'matrix npc %player% 100'
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
-    45: 'matrix kick %player% KillAura'
+    45: 'matrix delay 12 matrix kick %player% KillAura'
 
 ## HitBox
 # Description: This check prevents players from using HitBox, Angle, Reach hacks.
@@ -317,6 +325,9 @@ fly:
 
   # NoFall check
   nofall:
+    # Should Matrix setback the player who use NoFall?
+    setback: true
+
     # Force deal damage after setback?
     damage: true
 
@@ -496,6 +507,10 @@ jesus:
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 15
 
+  # Should Matrix ignore whether player is in swimming?
+  # This feature can prevent swimming status desync
+  ignore_swim_pose: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -551,17 +566,10 @@ velocity:
   # is lagging or changing resource pack.
   ignore_lag: true
 
-  # Violation Weights
-  # -1 = disable that module
-  vl_weights:
-    P1: 10
-    P2: 5
-    P3: 7
-    P4: 4
-    P5: 4
-    P6: 2
-    P7: 3
-    P8: 2
+  # The VL weight of velocity check modules (-1 = disable)
+  modules:
+    respond: 5
+    analyser: 3
 
   # Violation Thresholds
   # number_of_violations: '<command>'
