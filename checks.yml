@@ -202,6 +202,15 @@ killaura:
       # How much VL should the player get after being flagged by this module?
       vl_weight: 15
 
+    # Combine check
+    combine:
+      test:
+        time: 5000
+        condition: # 条件
+          - 'ka.one.11'
+          - 'ka.smt'
+        action: 5 # +5 VL
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
@@ -477,15 +486,22 @@ scaffold:
   # Modules
   modules:
     # It can detect player bridging faster
-    scaffold:
+    place:
       enable: true
-      vl_weights:
-        safewalk: 4
-        expand: 3
-        limit: 1
-        head: 5
-        simple: 3
-        direction: 4
+      vl_weight: 7
+
+    # Preventing player bridge too fast
+    delay:
+      enable: true
+      vl_weight: 5
+      cancel_place: true
+      min_delay: 6
+
+    # Preventing player right clicker fast
+    right_cps:
+      enable: true
+      vl_weight: 5
+
     # It can detect player towering up faster
     tower:
       enable: true
@@ -494,7 +510,7 @@ scaffold:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    7: 'matrix notify %player% tried to bridge blocks quickly (Scaffold)'
+    10: 'matrix notify %player% tried to bridge blocks quickly (Scaffold)'
     15: 'matrix notify %player% tried to bridge blocks quickly (Scaffold) #2'
     24: 'matrix kick %player% Scaffold/Tower'
 
@@ -570,6 +586,7 @@ velocity:
   modules:
     respond: 5
     analyser: 3
+    vertical: 1
 
   # Violation Thresholds
   # number_of_violations: '<command>'
