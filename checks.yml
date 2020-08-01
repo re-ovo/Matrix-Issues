@@ -206,7 +206,7 @@ killaura:
     combine:
       test:
         time: 5000
-        condition: # 条件
+        condition:
           - 'ka.one.11'
           - 'ka.smt'
         action: 5 # +5 VL
