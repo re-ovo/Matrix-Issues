@@ -231,16 +231,23 @@ hitbox:
   # Maximum reach distance (default: 3.1)
   max_reach: 3.1
 
-  # How many moves should the Matrix trace back to the player? (default: 5)
+  # How many moves should the Matrix trace back to the player? (default: 7)
   # You can set this higher to reduce false positives, but this will weaken HitBox detection
   # My suggestion is 3 to 10, please don't make it more than 10, because it is useless
-  trace_back_length: 5
+  trace_back_length: 7
 
   # How much should Matrix ignore players with greater network latency?
   # When the player's network latency is greater than this value, some
   # HitBox checks will stop working to prevent false positives. You can
   # set this value to -1 to disable this feature. (default: 250)
   max_ping: 250
+
+  # Whether Matrix should cancel the player's attack after detecting the player's cheating?
+  # There are there choice:
+  #  1. none   -  do nothing
+  #  2. silent -  set damage to zero (Recommend)
+  #  3. cancel -  cancel the attack
+  cancel_way: silent
 
   # Violation weights
   vl_weights:
