@@ -249,6 +249,9 @@ hitbox:
   #  3. cancel -  cancel the attack
   cancel_way: silent
 
+  # Violations needed to cancel illegal hits
+  cancel_vl: 5
+
   # Violation weights
   vl_weights:
     miss_player_hitbox: 2
