@@ -292,11 +292,6 @@ speed:
   # Speed prediction tolerance
   tolerance: 0.01
 
-  # Setting this allows Matrix not to check the blocks and collision boxes around the
-  # player on every tick, but to use cached results (0 = not skip, default value = 2)
-  # Please do not set this value too large, it will cause too many skips and cause false positives.
-  skip_rate: 2
-
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 30
 
