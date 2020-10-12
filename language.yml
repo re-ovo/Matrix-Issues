@@ -38,6 +38,13 @@ verbose-format: '&7%player% failed &2%check% &7check &8| &7%message% &b(+%add_vl
 ## Relog message
 relog-message: 'Please wait %time_left% seconds before logging back in!'
 
+## Global Placeholders
+# Define constants here, you can use them in checks.yml
+# example:
+# define -> kick_help: "If you think it's a false positive, you can contact the Mod to solve the false kick"
+# then you can use %gp_kick_help% in checks.yml, It will be automatically replaced with this sentence
+global_placeholder: { }
+
 ## Commands description
 commands:
   verbose: 'Show/Hide Matrix verbose messages'
