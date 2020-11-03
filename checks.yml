@@ -530,7 +530,7 @@ jesus:
 
   # Should Matrix ignore whether player is in swimming?
   # This feature can prevent swimming status desync
-  ignore_swim_pose: true
+  ignore_swim_pose: false
 
   # Violation Thresholds
   # number_of_violations: '<command>'
