@@ -112,31 +112,14 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # KillAura / AimBot check based on machine learning clustering
-    # Matrix provides a trained model by default. Of course, you can also train a model yourself.
-    # Head to our WIKI to learn how to train:
-    #  -> https://github.com/jiangdashao/Matrix-Issues/wiki/Machine-Learning-KillAura-check-Training-Tutorial
-    # It is worth noting that this check is more useful for version 1.8. If you are a 1.9+ server, you can choose to disable this check
-    machine_learning:
-      # Enable this check?
+    # Analysis Check
+    # It analyse the player combat, and find the possible cheating pattern in it
+    analysis:
+      # Enable this modules
       enable: true
 
       # How much VL should the player get after being flagged by this module?
-      vl_weight: 8
-
-      # Which ML samples you need to disable?
-      # Format: - '#XXX'. For example: - '#66'
-      disable_patterns: {}
-
-      # The duration of data collection, the longer the time, the slower the detection, but the more accurate (unit: milliseconds, default: 7000)
-      collect_data_duration: 7000
-
-      # Data set availability threshold, if the collected data set is below
-      # the threshold, discard the data set without analysis
-      availability_threshold:
-        hits: 3 # In the dataset, the player must attack the entity 3 times.
-        clicks: 30  # In the dataset, the player must click the mouse 30 times
-        rotations: 90 # In the dataset, the player must rotate the head 90 times
+      vl_weight: 25
 
     # NoSwing check
     noswing:
@@ -148,22 +131,6 @@ killaura:
 
     # Critical Hit check, Prevent players from making abnormal crit attacks
     critical:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 5
-
-    # Snap check, it check players for abnormal fast aiming actions
-    snap:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 5
-
-    # click aim bot check, it check ClickAimBot for some clients
-    clickaimbot:
       # Enable this module?
       enable: true
 
@@ -185,14 +152,6 @@ killaura:
 
       # How much VL should the player get after being flagged by this module?
       vl_weight: 15
-
-    # Direction check, detect if aiming in player battle is normal based on motion prediction
-    direction:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 3
 
     # Smooth check, Check if the player's aim is smooth
     smooth:
