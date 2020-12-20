@@ -33,7 +33,7 @@ spam-warning: 'You can''t chat that fast or send the same content over again!'
 ## Verbose Messages
 # Description: How would you like the verbose messages formatted?
 # Default: '&7%player% failed &c%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps%'
-verbose-format: '&7%player% failed &2%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps% lp:%lp% component: %component%'
+verbose-format: '&7%player% failed &2%check% &7check &8| &7%message% &b(+%add_vl%) &8| &7vl:%vl% ping:%ping% tps:%tps% lp:%lp% component: %component% ver: %version%'
 
 ## Relog message
 relog-message: 'Please wait %time_left% seconds before logging back in!'
