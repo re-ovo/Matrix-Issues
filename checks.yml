@@ -23,57 +23,45 @@ killaura:
 
   # List of the various KillAura check modules of Matrix
   modules:
-    # "OneHit" check can detect some blatant KillAura cheats in short time
-    onehit:
-      # Should this module be enabled?
-      enable: true
+    # Check if the player's battle is following the vanilla protocol
+    protocol:
+      cancel_illegal_hit: true
+      vl_weight: 5
 
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 4
+      # Check if the player's attacking comply with the vanilla protocol/mechanism
+      check_protocol_1: true
+      check_protocol_2: true
+      check_protocol_3: true
+      check_protocol_4: true
+      check_protocol_5: true
+      check_protocol_6: true
 
-      # Do you want to disable the Packet Order check as it may cause false positives when players have high latency
-      disable_packet_order_check: false
+    # Check if the player shows aiming characteristics similar to aimbot
+    aimbot:
+      vl_weight: 7
 
-      # Do you want to disable the "dead entity hit" check?
-      # This may cause false positives for some players who click fast
-      disable_dead_hit_check: false
+      check_aimbot_sync: true
+      check_aimbot_shake: true
+      check_aimbot_snap: true
+      check_aimbot_sensitivity: true
+      check_aimbot_acceleration: true
+      check_aimbot_magic_a: true
+      check_aimbot_magic_b: true
 
-    # AutoClicker check setting, prevent player use AutoClicker cheat
-    autoclicker:
-      # Player can click 24 times per second if they jitter clicking
-      max_cps: 24
-
-      # If you enable this option, auto clicker check will not working when you attacking Mobs
-      not_check_attacking_mobs: false
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weights:
-        cps: 7
-        delay: 4 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
-        cps_long: 6
-        v19plus: 6
-
-    # click accuracy check
+    # Check whether the player's click operation is normal during the combat
     click:
-      # Enable this module?
-      enable: true
+      vl_weight: 5
+      max_cps: 12
+      buffer_size: 20 # Do not touch it ^^
 
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 30
-
-      # You can customize the sensitivity of click Check, which is divided into three levels (0, 1, 2)
-      # 0: It can detect many types of KillAura, but there are many false alarms. It is generally not recommended to use it
-      # 1: Medium sensitivity, with a small number of false positives, it can detect most types of killaura
-      # 2: The most lenient mode can detect most types of killaura, but it is slow
-      sensitivity: 2
+      check_cps: true
+      check_swing: true
+      check_timing: true
 
     # KillAura NPC check, it will generate a fake player behind the player to detect
     # if the player is using KillAura, and don't worry, the player can only see his own NPC
     npc:
-      # Enable this check?
       enable: true
-
-      # How much VL should the player get after being flagged by this module?
       vl_weight: 5
 
       # Should the position calculation of the NPC run asynchronously, as this may consume some resources
@@ -112,23 +100,6 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # Analysis Check
-    # It analyse the player combat, and find the possible cheating pattern in it
-    analysis:
-      # Enable this modules
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 25
-
-    # NoSwing check
-    noswing:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 4
-
     # Critical Hit check, Prevent players from making abnormal crit attacks
     critical:
       # Enable this module?
@@ -137,37 +108,14 @@ killaura:
       # How much VL should the player get after being flagged by this module?
       vl_weight: 5
 
-    # AimAssist Check, check for some simple aim assist cheats
-    aimassist:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 10
-
-    # Aim check, check if player aiming is normal based on math check
-    aim:
-      # Enable this module?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 15
-
-    # Smooth check, Check if the player's aim is smooth
-    smooth:
-      # Enable this check?
-      enable: true
-
-      # How much VL should the player get after being flagged by this module?
-      vl_weight: 15
-
     # Combine check
     combine:
-      test:
+      aimbot_with_reach:
         time: 5000
         condition:
-          - 'ka.one.11'
-          - 'ka.smt'
+          - 'ka.abt.ma'
+          - 'hb.reach'
+          - 'hb.reach'
         action: 5 # +5 VL
 
   # Violation Thresholds
@@ -176,7 +124,7 @@ killaura:
     10: 'matrix npc %player% 100'
     20: 'matrix notify %player% might be using combat hacks (KillAura)'
     35: 'matrix notify %player% is using combat hacks (KillAura) #2'
-    45: 'matrix delay 12 matrix kick %player% KillAura'
+    45: 'matrix delay 5 matrix kick %player% KillAura'
 
 ## HitBox
 # Description: This check prevents players from using HitBox, Angle, Reach hacks.
@@ -603,21 +551,6 @@ interact:
   commands:
     10: 'matrix notify %player% tried to illegally interact with Entity/Block (Interact)'
     15: 'matrix kick %player% Illegally Interacting with Block/Entity'
-
-## AutoFish
-# Check prevents the player from using an Auto-Fishing mod or hack.
-autofish:
-  # Enable this check?
-  enable: true
-
-  # Violations needed to cancel auto fishing (-1 = never cancel)
-  cancel_vl: 5
-
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    6: 'matrix notify %player% is using auto fish (AutoFish)'
-    14: 'matrix kick %player% No Auto Fishing!'
 
 ## Phase
 # Check prevents the player people glitching through blocks.
