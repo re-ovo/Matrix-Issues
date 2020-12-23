@@ -57,6 +57,13 @@ cloud_config:
 # Permission Cache refresh interval (unit: seconds, default: 15)
 permission_refresh_interval: 15
 
+# Enable BungeeCord GeyserMC Support?
+# Matrix supports two ways to run GeyserMC:
+#   1. Spigot Mode: Install GeyserMC/FloodGate in Spigot, you don’t need to modify this setting, Matrix will automatically support it
+#   2. Bungee Mode: When GeyserMC is installed in BungeeCord, you need to enable this option and also install Matrix in BungeeCord
+# !!!    Do NOT enable this option if you have NOT installed GeyserMC in BungeeCord
+bungee_geysermc_support: false
+
 # Kick Lighting Effect
 # Should there be a lightning bolt visual effect if someone is getting kicked using /matrix kick
 kick_strike_lightning: true
