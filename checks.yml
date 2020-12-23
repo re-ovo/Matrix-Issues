@@ -51,8 +51,9 @@ killaura:
     # Check whether the player's click operation is normal during the combat
     click:
       vl_weight: 5
-      max_cps: 12
+      max_cps: 15
       buffer_size: 20 # Do not touch it ^^
+      dynamic_cps_vl_weight: true
 
       check_cps: true
       check_swing: true
@@ -299,56 +300,30 @@ badpackets:
     150: 'matrix notify %player% is sending unusual packets to server (BadPackets) #2'
     240: 'matrix kick %player% Sending Unusual Packets'
 
-## FastUse
-# Check prevents player from eating or using an item too quickly.
-fastuse:
+## Delay Check
+# It prevents the player from speeding up certain actions, such as eating quickly, or quickly healing
+delay:
   # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal item use (-1 = never cancel)
-  cancel_vl: 1
+  # Should Matrix block player actions when cheating is detected?
+  cancel_action: true
 
-  # Violation weight
-  vl_weight: 1
+  # Modules List
+  # You can define the VL weight of each module, and -1 equals to disable it
+  check_healing: 1
+  check_using_items: 1
+  check_using_bow: 1
+  check_auto_splash: 2
+  check_inventory_action: 1
+  check_auto_totem: 1
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    5: 'matrix notify %player% tried to use an item faster than usual (FastUse)'
-    12: 'matrix kick %player% FastUse Hacks'
-
-## FastBow
-# Check prevents player from shooting a bow too quickly.
-fastbow:
-  # Enable this check?
-  enable: true
-
-  # Violations needed to cancel illegal bow use (-1 = never cancel)
-  cancel_vl: 7
-
-  # Violation Weight
-  vl_weight: 1
-
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    5: 'matrix notify %player% is trying to shoot a bow too quickly (FastBow)'
-    15: 'matrix kick %player% FastBow Hacks'
-
-## FastHeal
-# Check prevents player from regaining health too quickly.
-fastheal:
-  # Enable this check?
-  enable: true
-
-  # Violation Weight
-  vl_weight: 2
-
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    10: 'matrix notify %player% tried to regain health too quickly (FastHeal)'
-    20: 'matrix kick %player% FastHeal Hacks'
+    3: 'matrix notify %player% tring to speeding up actions (Delay) #1'
+    5: 'matrix notify %player% tring to speeding up actions (Delay) #2'
+    10: 'matrix kick %player% Speeding Up Operations'
 
 ## Block
 # Check prevents the player from breaking, placing block quickly
@@ -445,39 +420,6 @@ jesus:
     20: 'matrix notify %player% tried to move illegally in liquid (Jesus)'
     40: 'matrix notify %player% tried to move illegally in liquid (Jesus) #2'
     50: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
-
-## Inventory
-# Check prevents the player from using illegal inventory modifications such as Steal.
-# Also prevents quick inventory movement hacks.
-inventory:
-  # Enable this check?
-  enable: true
-
-  # Violations needed to cancel illegal movements of items (-1 = never cancel)
-  cancel_vl: 10
-
-  # Enable ChestStealer check?
-  # It can detect player taking items out of chest faster
-  chest_stealer: true
-
-  # Ignore items/inventory which has colorful name
-  # This feature can prevent false positive when you
-  # click some GUI such as the Bedwars Shop
-  ignore_color: false
-
-  # Disable InventoryMove check
-  # If you don't need InventoryMove check, you can set this to 'true' to disable it
-  # This option ONLY works for 1.12/1.13/+ server
-  disable_invmove: false
-
-  # Check AutoTotem cheat?
-  auto_totem: true
-
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    10: 'matrix notify %player% moved items in inventory too quickly (ChestSteal)'
-    20: 'matrix kick %player% ChestSteal/Inventory Hacks'
 
 ## Velocity
 # Check prevents the player from using any type of anti-knockback hacks.
