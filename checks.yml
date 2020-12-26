@@ -317,6 +317,7 @@ delay:
   check_auto_splash: 2
   check_inventory_action: 1
   check_auto_totem: 1
+  check_fast_throw: 1
 
   # Violation Thresholds
   # number_of_violations: '<command>'
