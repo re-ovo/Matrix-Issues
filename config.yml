@@ -1,17 +1,17 @@
 #### MATRIX CONFIG FILE
-#                         MATRIX ANTI CHEAT
-#             file: config.yml  | Customize general settings here
+#                        MATRIX ANTI CHEAT
+#        file: config.yml | Customize general settings here
 #
 # Links:
-#   1. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
-#   2. SpigotMC Overview Page: https://www.spigotmc.org/resources/64635/
-#   3. bStats: https://bstats.org/plugin/bukkit/Matrix
-#   4. Discord Group: https://discord.gg/pEvY55J
+#   1. Website: https://matrix.rip
+#   2. bStats: https://bstats.org/plugin/bukkit/Matrix
+#   3. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
+#   4. Discord: https://discord.gg/pEvY55J
 #
 # Contributors:
-#   Performance#1955: Report a lot of bugs and manage the Github issue tracker
-#   Zak#6435 & Alex#2237: Provide the test server and report some bugs
-#   Kruize#9138 & VariationTime#2942: Report a lot of bugs and test in the production environment
+#   Performance#1955: Reported many bugs and manages the Github issue tracker
+#   Zak#6435 & Alex#2237: Provides the test server and reported a few bugs
+#   Kruize#9138 & VariationTime#2942: Reported lots of bugs and tested in a production environment
 #
 # Thanks for using Matrix! <3
 
