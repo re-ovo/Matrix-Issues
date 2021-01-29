@@ -1,22 +1,38 @@
-#### MATRIX CONFIG FILE
-#                        MATRIX ANTI CHEAT
-#        file: config.yml | Customize general settings here
+#### Matrix Config - config.yml ####################################################
 #
-# Links:
-#   1. Website: https://matrix.rip
-#   2. bStats: https://bstats.org/plugin/bukkit/Matrix
-#   3. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
-#   4. Discord: https://discord.gg/pEvY55J
+#     Hi, welcome to use Matrix anti-cheat, this is config.yml, used to define the
+#  global settings of Matrix.
 #
-# Contributors:
-#   Performance#1955: Reported many bugs and manages the Github issue tracker
-#   Zak#6435 & Alex#2237: Provides the test server and reported a few bugs
-#   Kruize#9138 & VariationTime#2942: Reported lots of bugs and tested in a production environment
+#  - If you encounter any problems, please go to our official Discord
+#  group for help: https://discord.gg/pEvY55J
 #
-# Thanks for using Matrix! <3
+#  Useful Links:
+#    Website: https://matrix.rip
+#    Discord: https://discord.gg/pEvY55J
+#    Wiki: https://wiki.matrix.rip
+#    Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
+#
+#  Anyway, thanks for using Matrix anti-cheat! ❤
+#
+#####################################################################################
 
-# Check update when starting up?
+# Should Matrix check update when starting up?
 check_update: true
+
+# Premium User - Verify the identity of premium/enterprise users
+#
+#   This is an authentication system that provides better service to paying users.
+#  If you are premium user, you will get more additional KillAura/Scaffold/etc checks.
+#  You can ignore this section if you are a free version user.
+#
+# In addition to the free version and the paid version, there is also an enterprise version.
+# You can check their differences in the #premium-version channel of the official discord server
+premium_user:
+  # Login user name
+  user: ''
+
+  # Login password
+  password: ''
 
 # Player Latency Protection
 # Reduce the VL value triggered by high-latency players, making them less likely to be kicked out
@@ -24,7 +40,8 @@ player_latency_protection:
   # Enable this feature?
   enable: true
 
-# Database logging system
+# Database logging system, you can query detection log by executing
+# the "/matrix playerlog" command after enabled this feature.
 database:
   # Should matrix use a database to record player data?
   enable: false
@@ -41,7 +58,7 @@ database:
   # Database password
   password: 'root'
 
-## Load the configuration file from Http(s) server (Only "checks.yml"!)
+# Should Matrix load the configuration file from Http(s) server (But ONLY for "checks.yml"!)
 # Some large servers have dozens or even hundreds of sub-servers, so updating configuration
 # files is very troublesome for them. This feature can help Matrix directly load configuration
 # files from a central address.
@@ -64,25 +81,8 @@ permission_refresh_interval: 15
 # !!!    Do NOT enable this option if you have NOT installed GeyserMC in BungeeCord
 bungee_geysermc_support: false
 
-# Kick Lighting Effect
 # Should there be a lightning bolt visual effect if someone is getting kicked using /matrix kick
 kick_strike_lightning: true
-
-# Ghost Mode
-# If you enable Ghost Mode, Matrix will Not setback player or cancel illegal actions.
-# I don't recommend turning this feature on, which can lead to bypasses, such as teleport
-ghost_mode: false
-
-# Premium User
-# This is an authentication system that provides better service to paying users.
-# If you are premium user, you will get more additional KillAura checks
-# You can learn more on our Discord server!
-premium_user:
-  # Login user name
-  user: ''
-
-  # Login password
-  password: ''
 
 # Server Lag Protection
 # Automatically disables some checks when your server is lagging. This prevents
