@@ -1,20 +1,26 @@
-#### MATRIX CONFIG FILE
-#                        MATRIX ANTI CHEAT
-#        file: checks.yml | Customize hack detections here
+#### Matrix Config - checks.yml ####################################################
 #
-# Links:
-#   1. Website: https://matrix.rip
-#   2. bStats: https://bstats.org/plugin/bukkit/Matrix
-#   3. Issue Tracker: https://github.com/jiangdashao/Matrix-Issues/issues
-#   4. Discord: https://discord.gg/pEvY55J
-#   
+#     Hi, welcome to use Matrix anti-cheat, this is checks.yml, used to define
+#  the settings and behaviors of each checks. You can set the parameters of
+#  each check here, and you can also define how to perform actions after each
+#  check detects a player cheating.
 #
-# Contributors:
-#   Performance#1955: Reported many bugs and manages the Github issue tracker
-#   Zak#6435 & Alex#2237: Provides the test server and reported a few bugs
-#   Kruize#9138 & VariationTime#2942: Reported lots of bugs and tested in a production environment
+#  CAUTION! If you encounter any false positives and bypasses, you should first
+#  consider reporting this BUG. Adjusting the configuration file will not really
+#  fix the false positives and bypasses!
 #
-# Thanks for using Matrix! <3
+#  - What is "VL"?
+#        "VL" is the abbreviation of "Violation Level". When the player is marked
+#    as cheating by anti-cheating, the anti-cheating will increase the player's
+#    violation level. When the player's VL reaches the value in the "commands"
+#    node below, the corresponding command will be executed.
+#
+#  - If you encounter any problems, please go to our official Discord
+#  group for help: https://discord.gg/pEvY55J
+#
+#  Anyway, thanks for using Matrix anticheat! ❤
+#
+#####################################################################################
 
 ## KillAura
 # Prevents the player from using the KillAura/AimBot hack
@@ -36,6 +42,7 @@ killaura:
       check_protocol_4: true
       check_protocol_5: true
       check_protocol_6: true
+      check_protocol_7: true
 
     # Check if the player shows aiming characteristics similar to aimbot
     aimbot:
@@ -46,19 +53,8 @@ killaura:
       check_aimbot_snap: true
       check_aimbot_sensitivity: true
       check_aimbot_acceleration: true
-      check_aimbot_magic_a: true
-      check_aimbot_magic_b: true
-
-    # Check whether the player's click operation is normal during the combat
-    click:
-      vl_weight: 5
-      max_cps: 15
-      buffer_size: 20 # Do not touch it ^^
-      dynamic_cps_vl_weight: true
-
-      check_cps: true
-      check_swing: true
-      check_timing: true
+      check_aimbot_bad_rotation: true
+      check_aimbot_mouse_speed: true
 
     # KillAura NPC check, it will generate a fake player behind the player to detect
     # if the player is using KillAura, and don't worry, the player can only see his own NPC
@@ -110,12 +106,18 @@ killaura:
       # How much VL should the player get after being flagged by this module?
       vl_weight: 5
 
+    # Strafe Check
+    strafe:
+      enable: true
+      vl_weight: 3
+      cancel_move: true
+
     # Combine check
     combine:
       aimbot_with_reach:
         time: 5000
         condition:
-          - 'ka.abt.ma'
+          - 'ka.abt.magic'
           - 'hb.reach'
           - 'hb.reach'
         action: 5 # +5 VL
@@ -130,26 +132,15 @@ killaura:
 
 ## HitBox
 # Description: This check prevents players from using HitBox, Angle, Reach hacks.
-# Note: This check is strict ONLY when you attack other PLAYERS, but it's very loose
-# when you attack non-player creatures. So, if you find that you can use HixBox
-# hack on non-player creatures, it's very normal, don't report it.
 hitbox:
   # Enable HitBox check?
   enable: true
 
-  # Maximum reach distance (default: 3.1)
-  max_reach: 3.1
+  # Maximum reach distance (default: 3.15)
+  max_reach: 3.15
 
-  # How many moves should the Matrix trace back to the player? (default: 7)
-  # You can set this higher to reduce false positives, but this will weaken HitBox detection
-  # My suggestion is 3 to 10, please don't make it more than 10, because it is useless
-  trace_back_length: 7
-
-  # How much should Matrix ignore players with greater network latency?
-  # When the player's network latency is greater than this value, some
-  # HitBox checks will stop working to prevent false positives. You can
-  # set this value to -1 to disable this feature. (default: 250)
-  max_ping: 250
+  # The tick length of the traceback when calculating the hitbox
+  trace_back_length: 8
 
   # Whether Matrix should cancel the player's attack after detecting the player's cheating?
   # There are there choice:
@@ -166,7 +157,6 @@ hitbox:
     miss_player_hitbox: 2
     reach_target_standing: 10
     reach_target_moving: 3
-    reach_simple: 3
 
   # Should dynamic VL weight be enabled?
   # If enabled, the VL weight will be calculated based on the player's reach
@@ -187,88 +177,60 @@ hitbox:
     15: 'matrix notify %player% tried to reach entity outside max reach distance (HitBox) #2'
     24: 'matrix kick %player% Reach/HitBox Hacks'
 
-## Movement Speed Check
-# This checks how fast a player moves, and prevents the player from moving too fast.
-speed:
+## Click check
+# Prevent players from clicking too fast, or using autoclickers to attack other entities
+click:
   # Enable this check?
-  # Warning: Will also disable
-  # flight detection.
   enable: true
 
-  # Should Matrix ignore the unloaded chunks when checking? (default: true)
-  ignore_unloaded_chunks: true
+  # What should the player's highest CPS be? When the player exceeds this cps, it will be detected
+  max_cps: 15
 
-  # Speed prediction tolerance
-  tolerance: 0.01
+  # Modules
+  check_cps: true
+  check_swing: true
+  check_timing: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
-  cancel_vl: 30
+  # When detecting that the cps is too high, whether to dynamically adjust the vl weight according to the cps?
+  # This means that the higher the player’s cps, the higher the VL obtained when detected cheating
+  dynamic_cps_vl_weight: true
 
-  # Enable sprint direction check?
-  sprint_direction: true
+  # Click interval buffer size (Do not touch it!!!)
+  buffer_size: 20
 
-  # Enable strafe check?
-  strafe: true
+  # Violation Thresholds
+  # number_of_violations: '<command>'
+  commands:
+    10: 'matrix notify %player% tried to click abnormally (Click) #1'
+    18: 'matrix notify %player% tried to click abnormally (Click) #2'
+    30: 'matrix kick %player% Click Abnormally'
 
-  # Enable FastClimb/FastLadder check?
-  fastclimb: true
+## Movement Speed Check
+# This check prevents the player from moving abnormally
+move:
+  # Enable this check?
+  enable: true
 
-  # Should Matrix check NoSlowDown cheat?
+  # Should Move check be run asynchronously? This will reduce Matrix's occupation of the main thread
+  # But please note that the asynchronous mode "may be" not stable enough, don't enable it if you are not really need it
+  # And, asynchronous mode only supports 1.8/1.12 and the latest version of Minecraft
+  async_mode: false
+
+  # Should Matrix block NoSlow cheating?
   check_noslow: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
-  commands:
-    55: 'matrix notify %player% tried to move faster than usual (Speed) #1'
-    90: 'matrix notify %player% tried to move faster than usual (Speed) #2'
-    220: 'matrix kick %player% Speed Hacks'
+  # When the player reaches this VL, start to pull back the player's abnormal movement
+  cancel_vl: 35
 
-## Fly
-# Prevents the player from using both vanilla and non-vanilla fly hacks.
-fly:
-  # Enable this check?
-  # Warning: Speed check must also be enabled.
-  enable: true
-
-  # Violations needed to cancel illegal movements (-1 = never cancel)
-  cancel_vl: 50
-
-  # Fly ability check
-  # It might be not compatible with some plugins, test it by yourself
-  ability:
-    enable: true
-    vl_weight: 20
-
-  # If the player is very close to the void, should Matrix teleport
-  # it to the void after detecting that player is cheating? (default: true)
-  # If you disable this, it might cause some NoFall / BugUp bypass, but
-  # it's a nice option for skyblock server if you don't want your players
-  # get teleport into the void
-  setback_to_void: true
-
-  # NoFall check
-  nofall:
-    # Should Matrix setback the player who use NoFall?
-    setback: true
-
-    # Force deal damage after setback?
-    damage: true
-
-  # Trident Boost violation level weight
-  trident_boost_vl_weight: 20
-
-  # Setback method (back/ground)
-  # back: teleport the player to the last legit location
-  # ground: teleport the player to the ground under the player
-  setback: back
+  # Should Matrix apply damage to the player when the player is setback?
+  apply_damage: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    50: 'matrix notify %player% tried to fly (Fly) #1'
-    100: 'matrix notify %player% tried to fly (Fly) #2'
-    180: 'matrix kick %player% Fly Related Hacks'
-
+    55: 'matrix notify %player% tried to move abnormally (Move) #1'
+    90: 'matrix notify %player% tried to move abnormally (Move) #2'
+    220: 'matrix kick %player% Move Abnormally'
 
 ## BadPackets
 # Prevents player from sending too many movement packets or sending illegal packets
@@ -323,8 +285,8 @@ delay:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    3: 'matrix notify %player% tring to speeding up actions (Delay) #1'
-    5: 'matrix notify %player% tring to speeding up actions (Delay) #2'
+    3: 'matrix notify %player% is tring to speed up actions (Delay) #1'
+    5: 'matrix notify %player% is tring to speed up actions (Delay) #2'
     10: 'matrix kick %player% Speeding Up Operations'
 
 ## Block
@@ -384,7 +346,7 @@ scaffold:
       enable: true
       vl_weight: 5
       cancel_place: true
-      min_delay: 6
+      min_delay: 4
 
     # Preventing player right clicker fast
     right_cps:
@@ -475,20 +437,10 @@ interact:
   # Enable this check?
   enable: true
 
-  # Modules List
-  modules:
-    # It can detect player breaking blocks through walls
-    break_block:
-      enable: true
-      vl_weight: 1
-    # It can detect player attacking other entities through walls
-    attack:
-      enable: true
-      vl_weight: 1
-    # It can detect player interacting blocks too far away
-    block_reach:
-      enable: true
-      vl_weight: 1
+  check_break_block: true
+  check_place_block: true
+  check_interact_block: true
+  check_attack: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
