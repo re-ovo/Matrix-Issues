@@ -211,11 +211,6 @@ move:
   # Enable this check?
   enable: true
 
-  # Should Move check be run asynchronously? This will reduce Matrix's occupation of the main thread
-  # But please note that the asynchronous mode "may be" not stable enough, don't enable it if you are not really need it
-  # And, asynchronous mode only supports 1.8/1.12 and the latest version of Minecraft
-  async_mode: false
-
   # Should Matrix block NoSlow cheating?
   check_noslow: true
 
@@ -224,6 +219,9 @@ move:
 
   # Should Matrix apply damage to the player when the player is setback?
   apply_damage: true
+
+  # Should Matrix teleport the player into the void if the player cheats on the void?
+  allow_setback_to_void: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
