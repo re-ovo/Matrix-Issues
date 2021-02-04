@@ -43,6 +43,7 @@ killaura:
       check_protocol_5: true
       check_protocol_6: true
       check_protocol_7: true
+      check_protocol_8: true
 
     # Check if the player shows aiming characteristics similar to aimbot
     aimbot:
@@ -137,7 +138,7 @@ hitbox:
   enable: true
 
   # Maximum reach distance (default: 3.15)
-  max_reach: 3.15
+  max_reach: 3.05
 
   # The tick length of the traceback when calculating the hitbox
   trace_back_length: 8
