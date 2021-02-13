@@ -168,7 +168,7 @@ hitbox:
     enable: true
     expander: 10
     min_vl: 3
-    max_vl: 15
+    max_vl: 8
 
   # Violation Thresholds
   # number_of_violations: '<command>'
