@@ -170,6 +170,11 @@ hitbox:
     min_vl: 3
     max_vl: 8
 
+  # What is the maximum increase in VL in a short time?
+  # Due to the instability of the network connection, HitBox detection may cause false alarms when a lag spike occurs
+  # This option limits the maximum increase in VL in "5 seconds"
+  max_burst_vl: 15
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
