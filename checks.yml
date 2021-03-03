@@ -226,6 +226,13 @@ move:
   # Should Matrix apply damage to the player when the player is setback?
   apply_damage: true
 
+  # Should Matrix handle knockback more strictly?
+  strict_kb_handling: false
+
+  # Should Matrix check the speed of players with flying ability?
+  # This may cause the flight capability of some "PvP clients" to be restricted
+  check_flying_players: false
+
   # Should Matrix teleport the player into the void if the player cheats on the void?
   allow_setback_to_void: true
 
@@ -253,7 +260,7 @@ badpackets:
   freeze_time: 500
 
   # How many extra packets can the player send?
-  max_extra_packets: 15
+  max_extra_packets: 30
 
   # Violation weight
   vl_weights:
