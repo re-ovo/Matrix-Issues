@@ -229,9 +229,26 @@ move:
   # Should Matrix handle knockback more strictly?
   strict_kb_handling: false
 
+  # Should Matrix allow the player to stand on the cancelled block?
+  # I recommend do not turn on it, it will slightly affect the performance
+  # and caused some bypass.
+  # https://www.youtube.com/watch?v=9lNXNW6Phk0&t=133s
+  allow_bpe_bridge: false
+
   # Should Matrix check the speed of players with flying ability?
   # This may cause the flight capability of some "PvP clients" to be restricted
   check_flying_players: false
+
+  # If Matrix believes that the player must be cheating, Matrix will ignore
+  # the current VL and directly setback the player. But it's not 100% accurate,
+  # so you can choose which situations matrix should force setback players
+  force_setback_situations:
+    high_jump: true
+    ground_spoof_jump: true
+    bad_jumps: true
+    air_accel: true
+    air_mdf: true
+    step: true
 
   # Should Matrix teleport the player into the void if the player cheats on the void?
   allow_setback_to_void: true
@@ -448,8 +465,6 @@ interact:
   # Enable this check?
   enable: true
 
-  check_break_block: true
-  check_place_block: true
   check_interact_block: true
   check_attack: true
 
