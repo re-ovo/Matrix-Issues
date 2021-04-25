@@ -133,3 +133,9 @@ disabled_components:
 # Custom VL Weight (Format: component: new vl weight)
 custom_vl_weight:
   - 'example_component:5'
+
+# Fake AntiCheat Commands
+# Should Matrix register some fake anti-cheat commands?
+fake_anticheat:
+  aac: false
+  spartan: false
