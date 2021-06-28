@@ -52,6 +52,9 @@ database:
   # Database name
   db: 'minecraft'
 
+  # Connection Options
+  option: 'useSSL=false&autoReconnect=true'
+
   # Database username
   username: 'root'
 
