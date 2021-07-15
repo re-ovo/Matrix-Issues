@@ -4,8 +4,8 @@ This repository is to track issues and feature requests.
 ## Links
 - Purchase: https://www.mc-market.org/resources/13999/  
 - Website: https://matrix.rip  
-- Discord: https://discord.gg/pEvY55J
-* *Trial version is located in the Discord server.*
+- Discord: https://discord.gg/pEvY55J  
+**Trial version is located in the Discord server.*
 
 ## Note
 To report an issue, click [**Issues**](https://github.com/jiangdashao/Matrix-Issues/issues) in the repositry navigation bar, click [**New issue**](https://github.com/jiangdashao/Matrix-Issues/issues/new/choose), and choose one of the issue templates.
