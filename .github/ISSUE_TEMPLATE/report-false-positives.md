@@ -10,7 +10,7 @@ assignees: ''
 ## Troubleshooting Information
 `Change - [ ] to - [X] to check the checkboxes below.`
 - [ ] Matrix and ProtocolLib are up-to-date
-- [ ] Matrix is running on a 1.8, 1.12, 1.13, 1.14, 1.15, or 1.16 server
+- [ ] Matrix is running on a 1.8 or 1.12 to 1.17 server
 - [ ] The issue happens on default config.yml and checks.yml
 - [ ] I've tested if the issue happens on default config
 
