@@ -1,5 +1,5 @@
 # Matrix Issue Tracker
-This repository is to track issues and feature requests.
+This repository exists to track issues and feature requests.
 
 ## Links
 - Purchase: https://www.mc-market.org/resources/13999/  
@@ -14,4 +14,5 @@ If you do not follow the issue templates, **your issue will be marked as invalid
 
 ## Discord Role
 You must submit **10 valid issues** on the issue tracker to receive the "`Bug Catcher`" role in the Discord server.
+
 These issues must be valid, non-trivial issues that contributed to a patching a bypass or false positive in a Matrix update.
