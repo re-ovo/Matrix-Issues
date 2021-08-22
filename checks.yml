@@ -148,7 +148,7 @@ hitbox:
   #  1. none   -  do nothing
   #  2. silent -  set damage to zero (Recommend)
   #  3. cancel -  cancel the attack
-  cancel_way: silent
+  cancel_way: cancel
 
   # Violations needed to cancel illegal hits
   cancel_vl: 5
@@ -265,24 +265,6 @@ move:
 badpackets:
   # Enable this check?
   enable: true
-
-  # Buffer Size (ticks)
-  # The larger the value, the slower the detection, but the more stable
-  # Don't set it lower than 10
-  buffer_size: 20
-
-  # Freeze time (millisecond, 1second=1000 millisecond)
-  # The time to freeze player if they try to send too
-  # many moving packets at the same time
-  freeze_time: 500
-
-  # How many extra packets can the player send?
-  max_extra_packets: 30
-
-  # Violation weight
-  vl_weights:
-    limit: 10
-    timer: 10
 
   # Violation Thresholds
   # number_of_violations: '<command>'
