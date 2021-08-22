@@ -34,33 +34,6 @@ premium_user:
   # Login password
   password: ''
 
-# Player Latency Protection
-# Reduce the VL value triggered by high-latency players, making them less likely to be kicked out
-player_latency_protection:
-  # Enable this feature?
-  enable: true
-
-# Database logging system, you can query detection log by executing
-# the "/matrix playerlog" command after enabled this feature.
-database:
-  # Should matrix use a database to record player data?
-  enable: false
-
-  # Database address
-  address: 'localhost'
-
-  # Database name
-  db: 'minecraft'
-
-  # Connection Options
-  option: 'useSSL=false&autoReconnect=true'
-
-  # Database username
-  username: 'root'
-
-  # Database password
-  password: 'root'
-
 # Should Matrix load the configuration file from Http(s) server (But ONLY for "checks.yml"!)
 # Some large servers have dozens or even hundreds of sub-servers, so updating configuration
 # files is very troublesome for them. This feature can help Matrix directly load configuration
