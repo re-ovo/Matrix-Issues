@@ -266,6 +266,20 @@ badpackets:
   # Enable this check?
   enable: true
 
+  # Timer check settings
+  timer:
+    # Use the old timer to check? It is more stable, but weaker (not recommend)
+    use_legacy_timer_check: false
+
+    # Minimum timer balance value (ticks)
+    # The lower the value, the fewer false positives, but it also means that it is easier to bypass
+    min_balance: -15.0
+
+    # Speed up timer check
+    # If the player’s data packet interval shows a constant trend,
+    # accelerate the growth of the balance, so that the timer can be detected faster
+    accelerate_timer_check: true
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
