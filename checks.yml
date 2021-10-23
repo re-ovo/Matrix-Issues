@@ -48,6 +48,7 @@ killaura:
     # Check if the player shows aiming characteristics similar to aimbot
     aimbot:
       vl_weight: 7
+      cancel_hit: true
 
       check_aimbot_sync: true
       check_aimbot_shake: true
@@ -144,7 +145,7 @@ hitbox:
   trace_back_length: 8
 
   # Whether Matrix should cancel the player's attack after detecting the player's cheating?
-  # There are there choice:
+  # There are these choice:
   #  1. none   -  do nothing
   #  2. silent -  set damage to zero (Recommend)
   #  3. cancel -  cancel the attack
