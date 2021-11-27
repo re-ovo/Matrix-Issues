@@ -4,7 +4,7 @@ This repository exists to track issues and feature requests.
 ## Links
 - Purchase: https://www.mc-market.org/resources/13999/  
 - Website: https://matrix.rip  
-- Discord: https://discord.gg/pEvY55J  
+- Discord: https://discord.matrix.rip  
 **Trial version is located in the Discord server.*
 
 ## Note
