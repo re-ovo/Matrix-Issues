@@ -271,8 +271,8 @@ move:
 
   # Custom vl decay interval(seconds) and vl decay step size
   decay:
-    interval: 15
-    amount: 25
+    interval: 10
+    amount: 45
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -445,8 +445,8 @@ jesus:
 
   # Custom vl decay interval(seconds) and vl decay step size
   decay:
-    interval: 15
-    amount: 7
+    interval: 10
+    amount: 10
 
   # Violation Thresholds
   # number_of_violations: '<command>'
