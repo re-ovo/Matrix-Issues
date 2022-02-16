@@ -406,7 +406,8 @@ scaffold:
       enable: true
       vl_weight: 5
       cancel_place: true
-      min_delay: 4
+      min_delay: 6
+      min_delay_diagonal: 3
 
     # Preventing player right clicker fast
     right_cps:
