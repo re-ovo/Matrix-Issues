@@ -11,7 +11,7 @@ assignees: ''
 `Change - [ ] to - [X] to check the checkboxes below.`
 - [ ] The incompatible plugin is up-to-date
 - [ ] Matrix and ProtocolLib are up-to-date
-- [ ] Matrix is running on a 1.8 or 1.12 to 1.17 server
+- [ ] Matrix is running on a 1.8 or 1.12 to 1.18.2 server
 - [ ] The issue happens on default config.yml and checks.yml
 - [ ] I've tested if the issue happens on default config
 
