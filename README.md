@@ -1,4 +1,7 @@
-> Warning: This repository does not accept how to bug feedback, please use the discord ticket function
+> 🔊 Warning: This repository does not accept how to bug feedback, please use the discord ticket function
+> 🔊 Warning: This repository does not accept how to bug feedback, please use the discord ticket function
+> 🔊 Warning: This repository does not accept how to bug feedback, please use the discord ticket function
+> 🔊 Warning: This repository does not accept how to bug feedback, please use the discord ticket function
 
 # Matrix Issue Tracker
 This repository exists to track issues and feature requests.
